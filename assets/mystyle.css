@@ -1,0 +1,12 @@
+.judul{
+    font-size: 36px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+
+}
+
+.btnlogin{
+    color: white;
+    background-color: #DB1C1C;
+    font-size: 20px !important;
+}

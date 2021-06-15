@@ -20,18 +20,24 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+    <!-- My Style -->
+    <link rel="stylesheet" href="<?= base_url('assets/mystyle.css') ?>">
+
 </head>
 
 <body class="">
     
-    <h1 class="h4 text-gray-900 mb-4">SISTEM INVENTORI BARANG GUDANG</h1>
+    <h1 class="judul text-center h4 text-gray-900 mb-4 mt-5">SISTEM INVENTORI BARANG GUDANG</h1>
 
     <div class="container">
 
         <!-- Outer Row -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5">
 
-            <div class="col-lg-7">
+            <div class="col-lg-5">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
@@ -39,8 +45,8 @@
                         <div class="row">
                             <div class="col-lg">
                                 <div class="p-5">
-                                    <div class="text-center">
-                                        <img src="./assets/logo.png" alt="logo" width="125" height="125">
+                                    <div class="text-center mb-2">
+                                        <img src="./assets/logo.png" alt="logo" width="215" height="208">
                                     </div>
                                     <form class="user">
                                         <div class="form-group">
@@ -60,7 +66,7 @@
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block ">
+                                        <button type="submit" class="btn btnlogin btn-user btn-block ">
                                             Login
                                         </button>
                                     </form>
@@ -71,6 +77,10 @@
                 </div>
             </div>
         </div>
+        
+        <footer class="float-sm-start" style="margin-top: -290px; "> 
+        <img src="./assets/bg.png" alt="bg" width="1300" height="452">
+        </footer>
     </div>
 
     <!-- Bootstrap core JavaScript-->
