@@ -58,7 +58,6 @@
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <i class="fa-solid fa-boxes"></i>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block ">
