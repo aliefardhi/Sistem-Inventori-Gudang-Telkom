@@ -5,7 +5,7 @@ class Barang_masuk extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('barang_masuk/index');
+        $this->load->view('barang_masuk/barang_masuk');
     }
 
 }
