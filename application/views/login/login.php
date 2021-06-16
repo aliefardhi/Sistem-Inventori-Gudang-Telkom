@@ -56,9 +56,9 @@
             </div>
         </div>
         
-        <footer class="float-sm-start" style="margin-top: -290px; "> 
-        <img src="./assets/bg.png" alt="bg" width="1300" height="452">
-        </footer>
     </div>
+    <footer class="float-sm-start" style="margin-top: -394px; "> 
+        <img src="./assets/bg.png" alt="bg" width="100%" height="452">
+    </footer>
 
     
