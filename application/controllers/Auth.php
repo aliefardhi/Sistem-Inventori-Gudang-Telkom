@@ -20,5 +20,35 @@ class Auth extends CI_Controller
             $this->load->view('login/login');
             $this->load->view('templates/footer');
         }
+        else{
+            $this->_login();
+        }
+    }
+
+    private function _login()
+    {
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        $user = $this->db->get_where('user', ['username' => $username])->row_array();
+        
+        if($user){
+            if(md5($password) == $user['password']){
+                $data = [
+                    'username' => $user['username'],
+                ];
+                $this->session->set_userdata($data);
+                redirect('barang_masuk');
+            }
+            else{
+                $this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible fade show" role="alert">Password salah!</div>');
+                redirect('auth');
+            }
+
+        }
+        else{
+            $this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible fade show" role="alert">Username atau password salah!</div>');
+            redirect('auth');
+        }
     }
 }

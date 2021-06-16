@@ -26,7 +26,7 @@
                                             <input type="text" class="form-control form-control-user"
                                                 id="username"
                                                 name="username"
-                                                placeholder="Username">
+                                                placeholder="Username" value="<?= set_value('username') ?>">
                                                 <?= form_error('username','<small class="text-danger pl-3">','</small>') ?>
                                         </div>
 
