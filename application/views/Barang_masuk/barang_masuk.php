@@ -4,11 +4,11 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class=" sidebar navbar-nav  sidebar sidebar-dark accordion mb-3" id="accordionSidebar">
+        <ul class=" sidebar navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Nav Item Logo--->
             <li class="logosidebar">
-            <img src="./assets/logo.png" alt="logo" width="125" height="125">
+                <img src="./assets/logo.png" alt="logo" width="125" height="125">
             </li> 
         
             <!-- Divider -->
@@ -40,10 +40,10 @@
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex mt-3 flex-column">
+        <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Page Heading -->
-            <h1 class="judul h3 mb-5 text-center">DAFTAR BARANG MASUK</h1>
+            <h1 class="judul h3 mb-5 text-center mt-4">DAFTAR BARANG MASUK</h1>
 
             <!-- button tambah dan explore-->
             <div>
@@ -56,8 +56,42 @@
                 </button>
             </div>
 
+            <div class="col">
+                <!-- Datatables -->
+                <table id="mytable" class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Vendor</th>
+                            <th>SN</th>
+                            <th>MAC</th>
+                            <th>tgl_masuk</th>
+                            <th>WH_Penerima</th>
+                            <th>Jenis</th>
+                            <th>Tipe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($b_masuk as $bm){ ?>
+                        <tr>
+                            <td><?= $bm->id; ?></td>
+                            <td><?= $bm->vendor; ?></td>
+                            <td><?= $bm->sn; ?></td>
+                            <td><?= $bm->mac; ?></td>
+                            <td><?= $bm->tgl_masuk; ?></td>
+                            <td><?= $bm->wh_penerima; ?></td>
+                            <td><?= $bm->jenis; ?></td>
+                            <td><?= $bm->tipe; ?></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+                <!-- End of Datatables -->
+            </div>
         </div>
         <!-- End of Content Wrapper -->
+
+
 
     </div>
     <!-- End of Page Wrapper -->
