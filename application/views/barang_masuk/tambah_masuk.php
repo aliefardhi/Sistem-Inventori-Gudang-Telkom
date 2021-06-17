@@ -6,7 +6,7 @@
 
    
 <!-- layout tambah barang masuk-->
-<div id="content-wrapper" class="d-flex flex-column fixed-top">
+<div id="content-wrapper" class="d-flex flex-column">
     <h1 class="judul text-center mt-5 mb-4">TAMBAH BARANG MASUK</h1>
 
     <div class="card card_masuk w-50 mt-5 card-body border-danger border-2 m-sm-auto shadow-lg">
