@@ -47,3 +47,18 @@
     margin-top: 20px;
 }
 
+.sidebar_kanan{
+    float:right;
+    width:230px;
+    background: #DB1C1C;
+    padding:10px;
+    height: 937px; 
+}
+
+.sidebar_kiri{
+    float:left;
+    width:230px;
+    background: #DB1C1C;
+    padding:10px;
+    height: 937px;
+}
