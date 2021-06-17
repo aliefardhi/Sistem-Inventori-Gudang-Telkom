@@ -4,7 +4,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class=" sidebar navbar-nav  sidebar sidebar-dark accordion mb-3" id="accordionSidebar">
+        <ul class=" sidebar navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Nav Item Logo--->
             <li class="logosidebar">
@@ -40,19 +40,21 @@
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex mt-3 flex-column">
+        <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Page Heading -->
-            <h1 class="judul h3 mb-5 text-center">DAFTAR BARANG KELUAR</h1>
+            <h1 class="judul h3 mb-5 text-center mt-4">DAFTAR BARANG KELUAR</h1>
 
             <!-- button tambah dan explore-->
             <div>
-                <button type="button" class="btn btn_tambah mb-3 float-right ">
-                Tambah Data
-                </button>
+                <a href="<?= base_url('tambah_masuk') ?>"class="btn btn_tambah mb-3 float-right ">
+                    <i class="fas fa-plus"></i>
+                        Tambah Data
+                </a>
 
                 <button type="button" class="btn btn_export mb-3 float-left">
-                Export Excel
+                    <i style="background-color:green"class="far fa-file-excel"></i>
+                        Export Excel
                 </button>
             </div>
 
@@ -61,7 +63,7 @@
                 <table id="mytable" class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th>No.</th>
+                            <th>No</th>
                             <th>WH Asal</th>
                             <th>SN</th>
                             <th>MAC</th>
