@@ -7,4 +7,10 @@ class Inv_model extends CI_Model
         $data = $this->db->query("SELECT * FROM b_masuk");
         return $data->result();
     }
+
+    public function tampil_data_keluar(){
+        $data = $this->db->query("SELECT * FROM b_keluar");
+        return $data->result();
+    }
+    
 }

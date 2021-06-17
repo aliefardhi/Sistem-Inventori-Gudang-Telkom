@@ -56,6 +56,40 @@
                 </button>
             </div>
 
+            <div class="col">
+                <!-- Datatables -->
+                <table id="mytable" class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>No.</th>
+                            <th>WH Asal</th>
+                            <th>SN</th>
+                            <th>MAC</th>
+                            <th>Tanggal Kirim</th>
+                            <th>WH Tujuan</th>
+                            <th>Jumlah Keluar</th>
+                            <th>Jenis</th>
+                            <th>Tipe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($b_keluar as $bk){ ?>
+                        <tr>
+                            <td><?= $bk->id_keluar; ?></td>
+                            <td><?= $bk->wh_asal; ?></td>
+                            <td><?= $bk->sn_keluar; ?></td>
+                            <td><?= $bk->mac_keluar; ?></td>
+                            <td><?= $bk->tgl_kirim; ?></td>
+                            <td><?= $bk->wh_tujuan; ?></td>
+                            <td><?= $bk->jumlah_keluar; ?></td>
+                            <td><?= $bk->jenis_keluar; ?></td>
+                            <td><?= $bk->tipe_keluar; ?></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+                <!-- End of Datatables -->
+            </div>
         </div>
         <!-- End of Content Wrapper -->
 
