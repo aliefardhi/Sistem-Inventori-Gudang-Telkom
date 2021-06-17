@@ -26,4 +26,7 @@
     <!-- My Style -->
     <link rel="stylesheet" href="<?= base_url('assets/mystyle.css') ?>">
 
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
 </head>
