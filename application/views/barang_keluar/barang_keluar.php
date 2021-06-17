@@ -4,11 +4,11 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class=" sidebar navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class=" sidebar navbar-nav  sidebar sidebar-dark accordion mb-3" id="accordionSidebar">
 
             <!-- Nav Item Logo--->
             <li class="logosidebar">
-                <img src="./assets/logo.png" alt="logo" width="125" height="125">
+            <img src="./assets/logo.png" alt="logo" width="125" height="125">
             </li> 
         
             <!-- Divider -->
@@ -40,10 +40,10 @@
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex mt-3 flex-column">
 
             <!-- Page Heading -->
-            <h1 class="judul h3 mb-5 text-center mt-4">DAFTAR BARANG MASUK</h1>
+            <h1 class="judul h3 mb-5 text-center">DAFTAR BARANG KELUAR</h1>
 
             <!-- button tambah dan explore-->
             <div>
@@ -92,8 +92,6 @@
             </div>
         </div>
         <!-- End of Content Wrapper -->
-
-
 
     </div>
     <!-- End of Page Wrapper -->

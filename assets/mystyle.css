@@ -28,19 +28,19 @@
 .btn_tambah{
     background-color: #DB1C1C !important;
     color: white !important;
-    width: 280px;
+    width: 185px;
     height:40px;
-    margin-right: 30pt;
-    border-radius: 10pt !important;
+    margin-right: 10pt;
+    border-radius: 5pt !important;
 }
 
 .btn_export{
     background-color: #DB1C1C !important;
     color: white !important;
-    width: 280px;
+    width: 185px;
     height: 40px;
-    margin-left: 30pt;
-    border-radius: 10pt !important;
+    margin-left: 10pt;
+    border-radius: 5pt !important;
 }
 
 .card_masuk{

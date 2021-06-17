@@ -41,8 +41,8 @@
             </table>
    
             <div class="btn_base">
-                <button href="#" class="btn btn-secondary mt-5 float-left">Kembali</button>
-                <button href="#" class="btn btn-danger mt-5 float-right">Simpan</button>
+                <a href="<?= base_url('barang_masuk'); ?>" class="btn btn-secondary mt-5 float-left">Kembali</a>
+                <button href="#" type="submit" class="btn btn-danger mt-5 float-right">Simpan</button>
             </div>
         </form>
     </div>
