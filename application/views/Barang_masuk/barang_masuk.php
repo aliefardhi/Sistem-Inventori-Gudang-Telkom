@@ -47,12 +47,14 @@
 
             <!-- button tambah dan explore-->
             <div>
-                <button type="button" class="btn btn_tambah mb-3 float-right ">
-                Tambah Data
-                </button>
+                <a href="<?= base_url('tambah_masuk') ?>"class="btn btn_tambah mb-3 float-right ">
+                    <i class="fas fa-plus"></i>
+                        Tambah Data
+                </a>
 
                 <button type="button" class="btn btn_export mb-3 float-left">
-                Export Excel
+                    <i style="background-color:green"class="far fa-file-excel"></i>
+                        Export Excel
                 </button>
             </div>
 
@@ -61,12 +63,12 @@
                 <table id="mytable" class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Id</th>
+                            <th>No</th>
                             <th>Vendor</th>
                             <th>SN</th>
                             <th>MAC</th>
-                            <th>tgl_masuk</th>
-                            <th>WH_Penerima</th>
+                            <th>Tanggal Masuk</th>
+                            <th>WH Penerima</th>
                             <th>Jenis</th>
                             <th>Tipe</th>
                         </tr>
