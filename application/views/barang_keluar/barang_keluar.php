@@ -47,7 +47,7 @@
 
             <!-- button tambah dan explore-->
             <div>
-                <a href="<?= base_url('tambah_masuk') ?>"class="btn btn_tambah mb-3 float-right ">
+                <a href="#"class="btn btn_tambah mb-3 float-right ">
                     <i class="fas fa-plus"></i>
                         Tambah Data
                 </a>
