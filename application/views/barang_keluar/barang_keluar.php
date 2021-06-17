@@ -16,13 +16,13 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="barangmasuk nav-item fs-5 fw-bold">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?= base_url('barang_masuk') ?>">
                 <i class="fas fa-boxes"></i>
                     <span>Barang Masuk</span></a>
             </li>
 
             <li class="barangkeluar nav-item fs-5 fw-bold">
-                <a class="nav-link" href="<?= base_url('barang_keluar') ?>">
+                <a class="nav-link" href="#">
                 <i class="fas fa-shipping-fast"></i>
                     <span>Barang Keluar</span></a>
             </li>
@@ -43,7 +43,7 @@
         <div id="content-wrapper" class="d-flex mt-3 flex-column">
 
             <!-- Page Heading -->
-            <h1 class="judul h3 mb-5 text-center">DAFTAR BARANG MASUK</h1>
+            <h1 class="judul h3 mb-5 text-center">DAFTAR BARANG KELUAR</h1>
 
             <!-- button tambah dan explore-->
             <div>
