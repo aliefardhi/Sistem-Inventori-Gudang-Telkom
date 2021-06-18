@@ -17,13 +17,13 @@
             <!-- Nav Item - Dashboard -->
             <li class="barangmasuk nav-item fs-5 fw-bold">
                 <a class="nav-link" href="<?= base_url('barang_masuk') ?>">
-                <i class="fas fa-boxes"></i>
+                <i style="color:white" class="fas fa-boxes"></i>
                     <span>Barang Masuk</span></a>
             </li>
 
             <li class="barangkeluar nav-item fs-5 fw-bold">
                 <a class="nav-link" href="#">
-                <i class="fas fa-shipping-fast"></i>
+                <i style="color:white" class="fas fa-shipping-fast"></i>
                     <span>Barang Keluar</span></a>
             </li>
 
@@ -32,7 +32,7 @@
 
             <li class="logout nav-item fs-5 fw-bold ">
                 <a class="nav-link" href="index.html">
-                <i class="fas fa-sign-out-alt"></i>
+                <i style="color:white" class="fas fa-sign-out-alt"></i>
                     <span>Logout</span></a>
             </li>
 
