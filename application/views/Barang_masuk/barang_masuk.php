@@ -15,10 +15,10 @@
             <hr style="color: white;" class="sidebar-divider mt-5">
 
             <!-- Nav Item - Dashboard -->
-            <li class="barangmasuk nav-item fs-5 fw-bold">
+            <li class="barangmasuk nav-item fs-5 fw-bold bg-light ">
                 <a class="nav-link" href="#">
-                <i style="color:white" class="fas fa-boxes"></i>
-                    <span>Barang Masuk</span></a>
+                <i style="color:black" class="fas fa-boxes"></i>
+                    <span style="color:black">Barang Masuk</span></a>
             </li>
 
             <li class="barangkeluar nav-item fs-5 fw-bold">

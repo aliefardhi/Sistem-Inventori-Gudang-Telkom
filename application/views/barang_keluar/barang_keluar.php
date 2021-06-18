@@ -21,14 +21,14 @@
                     <span>Barang Masuk</span></a>
             </li>
 
-            <li class="barangkeluar nav-item fs-5 fw-bold">
+            <li class="barangkeluar nav-item fs-5 fw-bold bg-light">
                 <a class="nav-link" href="#">
-                <i style="color:white" class="fas fa-shipping-fast"></i>
-                    <span>Barang Keluar</span></a>
+                <i style="color:black" class="fas fa-shipping-fast"></i>
+                    <span style="color:black">Barang Keluar</span></a>
             </li>
 
              <!-- Divider -->
-             <hr style="color: white;" class="sidebar-divider mt-4">
+             <hr style="color: white;" class="sidebar-divider mt-3">
 
             <li class="logout nav-item fs-5 fw-bold ">
                 <a class="nav-link" href="index.html">
