@@ -82,6 +82,7 @@
                             <th>WH Penerima</th>
                             <th>Jenis</th>
                             <th>Tipe</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,9 +93,18 @@
                             <td><?= $bm->sn; ?></td>
                             <td><?= $bm->mac; ?></td>
                             <td><?= $bm->tgl_masuk; ?></td>
-                            <td><?= $bm->wh_penerima; ?></td>
+                            <td style="table-layout: auto; width: 15%;"><?= $bm->wh_penerima; ?></td>
                             <td><?= $bm->jenis; ?></td>
                             <td><?= $bm->tipe; ?></td>
+                            <td style="width: 12%;">
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>barang_masuk/editmasuk/<?= $bm->id ?>">
+                                    Edit
+                                </a>
+
+                                <a class="btn btn-danger btn-sm" href="">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>

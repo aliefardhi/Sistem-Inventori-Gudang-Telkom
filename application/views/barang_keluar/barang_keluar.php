@@ -83,6 +83,7 @@
                             <th>Jumlah Keluar</th>
                             <th>Jenis</th>
                             <th>Tipe</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -93,10 +94,19 @@
                             <td><?= $bk->sn_keluar; ?></td>
                             <td><?= $bk->mac_keluar; ?></td>
                             <td><?= $bk->tgl_kirim; ?></td>
-                            <td><?= $bk->wh_tujuan; ?></td>
+                            <td style="table-layout: auto; width: 15%;"><?= $bk->wh_tujuan; ?></td>
                             <td><?= $bk->jumlah_keluar; ?></td>
                             <td><?= $bk->jenis_keluar; ?></td>
                             <td><?= $bk->tipe_keluar; ?></td>
+                            <td style="width: 12%;">
+                                <a class="btn btn-primary btn-sm" href="<?= base_url(); ?>barang_keluar/editKeluar/<?= $bk->id_keluar; ?>">
+                                    Edit
+                                </a>
+
+                                <a class="btn btn-danger btn-sm" href="">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>
