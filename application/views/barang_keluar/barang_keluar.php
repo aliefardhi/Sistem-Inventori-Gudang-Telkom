@@ -45,6 +45,17 @@
             <!-- Page Heading -->
             <h1 class="judul h3 mb-5 text-center mt-4">DAFTAR BARANG KELUAR</h1>
 
+            <!-- Success Alert -->
+            <?php if($this->session->flashdata('input')): ?>
+            <div class="mx-auto alert alert-success alert-dismissible fade show" role="alert">
+                Data <strong>berhasil</strong> <?= $this->session->flashdata('input'); ?>.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php endif; ?>
+            <!-- End of success alert -->
+
             <!-- button tambah dan explore-->
             <div>
                 <a href="<?= base_url('tambah_keluar') ?>"class="btn btn_tambah mb-3 float-right ">
