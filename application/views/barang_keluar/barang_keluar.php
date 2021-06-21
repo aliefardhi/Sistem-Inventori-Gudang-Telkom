@@ -31,7 +31,7 @@
              <hr style="color: white;" class="sidebar-divider mt-3">
 
             <li class="logout nav-item fs-5 fw-bold ">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?= base_url('auth') ?>" onclick="return confirm('Apakah anada yakin ingin logout?');">
                 <i style="color:white" class="fas fa-sign-out-alt"></i>
                     <span>Logout</span></a>
             </li>
