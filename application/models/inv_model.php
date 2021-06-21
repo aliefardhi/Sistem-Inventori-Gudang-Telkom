@@ -24,4 +24,9 @@ class Inv_model extends CI_Model
     public function getIdKeluar($idkeluar){
         return $this->db->get_where('b_keluar', ['id_keluar' => $idkeluar])->row_array();
     }
+
+    public function hapus($where,$table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
 }

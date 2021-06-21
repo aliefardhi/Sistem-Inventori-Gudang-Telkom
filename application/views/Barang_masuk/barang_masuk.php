@@ -101,7 +101,7 @@
                                     Edit
                                 </a>
 
-                                <a class="btn btn-danger btn-sm" href="">
+                                <a class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="<?= base_url(); ?>barang_masuk/hapusMasuk/<?= $bm->id; ?>">
                                     Delete
                                 </a>
                             </td>

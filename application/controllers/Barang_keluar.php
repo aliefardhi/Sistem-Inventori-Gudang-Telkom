@@ -23,5 +23,11 @@ class Barang_keluar extends CI_Controller
         $this->load->view('edit/editkeluar', $data);
         $this->load->view('templates/footer');
     }
+    public function hapusKeluar($idkeluar){
+        $where = array('id_keluar' => $idkeluar);
+        $this->inv_model->hapus($where, 'b_keluar');
+        $this->session->set_flashdata('input', 'dihapus');
+        redirect('barang_keluar');
+    }
 
 }

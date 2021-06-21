@@ -27,4 +27,11 @@ class Barang_masuk extends CI_Controller
         $this->load->view('edit/editmasuk', $data);
         $this->load->view('templates/footer');
     }
+
+    public function hapusMasuk($idmasuk){
+        $where = array('id' =>$idmasuk );
+        $this->inv_model->hapus($where, 'b_masuk');
+        $this->session->set_flashdata('input', 'dihapus');
+        redirect('barang_masuk');
+    }
 }
