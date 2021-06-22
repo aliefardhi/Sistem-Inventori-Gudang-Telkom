@@ -36,7 +36,7 @@
 
                     <tr>
                         <th width="135">Tanggal Kirim</th>
-                        <td style="display: block;"><input style="padding:10px; width:230px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px; margin-top: 20px;" type="datetime-local" name="tglkirim">
+                        <td style="display: block;"><input style="padding:10px; width:230px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px; margin-top: 20px;" type="date" name="tglkirim">
                         <?= form_error('tglkirim','<small class="text-danger pl-3">','</small>') ?>        
                         </td>     
                     </tr>
