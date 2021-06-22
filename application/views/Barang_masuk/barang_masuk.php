@@ -46,13 +46,14 @@
             <h1 class="judul h3 mb-5 text-center mt-4">DAFTAR BARANG MASUK</h1>
             
             <!-- Success Alert -->
+            <div class="flash-data" data-flashdata="<?= $this->session->flashdata('input'); ?>"></div>
             <?php if($this->session->flashdata('input')): ?>
-            <div class="mx-auto alert alert-success alert-dismissible fade show" role="alert">
+            <!-- <div class="mx-auto alert alert-success alert-dismissible fade show" role="alert">
                 Data <strong>berhasil</strong> <?= $this->session->flashdata('input'); ?>.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
+            </div> -->
             <?php endif; ?>
             <!-- End of success alert -->
 
