@@ -16,5 +16,22 @@ class Inv_model extends CI_Model
     public function input_data($data,$table){
         $this->db->insert($table,$data);
     }
+
+    public function getIdMasuk($idmasuk){
+        return $this->db->get_where('b_masuk', ['id'=>$idmasuk])->row_array();
+    }
     
+    public function getIdKeluar($idkeluar){
+        return $this->db->get_where('b_keluar', ['id_keluar' => $idkeluar])->row_array();
+    }
+
+    public function hapus($where,$table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+
+    public function edit($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
 }
