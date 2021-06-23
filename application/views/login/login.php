@@ -15,11 +15,11 @@
                         <div class="row">
                             <div class="col-lg">
                                 <div class="p-5">
-                                    <div class="text-center mb-2">
-                                        <img src="./assets/logo.png" alt="logo" width="215" height="208">
+                                    <div class="text-center mb-5">
+                                        <img src="./assets/ta_logo.png" alt="logo" width="271" height="89">
                                     </div>
 
-                                    <?= $this->session->flashdata('message'); ?>
+                                    <!-- <?= $this->session->flashdata('message') ?> -->
 
                                     <form class="user" method="POST" action="<?= base_url(); ?>auth">
                                         <div class="form-group">
