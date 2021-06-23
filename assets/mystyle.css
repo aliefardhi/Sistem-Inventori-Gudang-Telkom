@@ -63,3 +63,7 @@
     height: 937px;
 }
 
+.oval{
+    background-color: white;
+    border-radius: 50%;
+}

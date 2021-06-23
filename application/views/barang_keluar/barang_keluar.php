@@ -8,7 +8,8 @@
 
             <!-- Nav Item Logo--->
             <li class="logosidebar">
-            <img src="./assets/logo.png" alt="logo" width="125" height="125">
+            <div class="oval"></div>
+            <img src="./assets/circle_logo.png" alt="logo" width="125" height="125">
             </li> 
         
             <!-- Divider -->
