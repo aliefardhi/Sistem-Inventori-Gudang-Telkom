@@ -86,9 +86,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $index = 1; ?>
                         <?php foreach($b_masuk as $bm){ ?>
                         <tr>
-                            <td><?= $bm->id; ?></td>
+                            <td><?= $index; ?></td>
                             <td><?= $bm->vendor; ?></td>
                             <td><?= $bm->sn; ?></td>
                             <td><?= $bm->mac; ?></td>
@@ -106,6 +107,7 @@
                                 </a>
                             </td>
                         </tr>
+                        <?php $index++; ?>
                         <?php } ?>
                     </tbody>
                 </table>

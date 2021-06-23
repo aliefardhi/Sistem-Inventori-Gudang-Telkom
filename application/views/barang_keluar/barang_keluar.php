@@ -88,9 +88,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $index = 1; ?>
                         <?php foreach($b_keluar as $bk){ ?>
                         <tr>
-                            <td><?= $bk->id_keluar; ?></td>
+                            <td><?= $index; ?></td>
                             <td><?= $bk->wh_asal; ?></td>
                             <td><?= $bk->sn_keluar; ?></td>
                             <td><?= $bk->mac_keluar; ?></td>
@@ -109,6 +110,7 @@
                                 </a>
                             </td>
                         </tr>
+                        <?php $index++; ?>
                         <?php } ?>
                     </tbody>
                 </table>
