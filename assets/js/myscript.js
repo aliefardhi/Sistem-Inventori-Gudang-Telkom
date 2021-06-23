@@ -1,8 +1,8 @@
 const flashData = $ ('.flash-data').data('flashdata');
   if (flashData){
-    Swal({
+    Swal.fire({
         title : 'Data Barang Masuk', 
-        text : 'Berhasil' + flashData,
-        type : 'success',
+        text : 'Berhasil ' + flashData,
+        icon : 'success',
     });
   }
