@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class Barang_masuk extends CI_Controller 
 {
     public function __construct()
@@ -79,5 +84,43 @@ class Barang_masuk extends CI_Controller
         $this->inv_model->hapus($where, 'b_masuk');
         $this->session->set_flashdata('input', 'dihapus');
         redirect('barang_masuk');
+    }
+
+    public function export(){
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'No');
+        $sheet->setCellValue('B1', 'Vendor');
+        $sheet->setCellValue('C1', 'SN');
+        $sheet->setCellValue('D1', 'MAC');
+        $sheet->setCellValue('E1', 'Tanggal Masuk');
+        $sheet->setCellValue('F1', 'WH Penerima');
+        $sheet->setCellValue('G1', 'Jenis');
+        $sheet->setCellValue('H1', 'Tipe');
+
+        $bMasuk = $this->inv_model->tampil_data();
+
+        $no = 1;
+        $x = 2;
+        foreach($bMasuk as $row){
+            $sheet->setCellValue('A'.$x, $no++);
+            $sheet->setCellValue('B'.$x, $row->vendor);
+            $sheet->setCellValue('C'.$x, $row->sn);
+            $sheet->setCellValue('D'.$x, $row->mac);
+            $sheet->setCellValue('E'.$x, $row->tgl_masuk);
+            $sheet->setCellValue('F'.$x, $row->wh_penerima);
+            $sheet->setCellValue('G'.$x, $row->jenis);
+            $sheet->setCellValue('H'.$x, $row->tipe);
+            $x++;
+        }
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'Daftar Barang Masuk';
+
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'.$filename.'.xlsx"');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
+
     }
 }
