@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class Barang_keluar extends CI_Controller 
 {
     public function __construct()
@@ -77,6 +82,44 @@ class Barang_keluar extends CI_Controller
         $this->inv_model->hapus($where, 'b_keluar');
         $this->session->set_flashdata('input', 'dihapus');
         redirect('barang_keluar');
+    }
+    public function export(){
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'No');
+        $sheet->setCellValue('B1', 'WH Asal');
+        $sheet->setCellValue('C1', 'SN');
+        $sheet->setCellValue('D1', 'MAC');
+        $sheet->setCellValue('E1', 'Tanggal Kirim');
+        $sheet->setCellValue('F1', 'WH Tujuan');
+        $sheet->setCellValue('G1', 'Jumlah Keluar');
+        $sheet->setCellValue('H1', 'Jenis');
+        $sheet->setCellValue('I1', 'Tipe');
+
+        $bKeluar = $this->inv_model->tampil_data_keluar();
+
+        $no = 1;
+        $x = 2;
+        foreach($bKeluar as $row){
+            $sheet->setCellValue('A'.$x, $no++);
+            $sheet->setCellValue('B'.$x, $row->wh_asal);
+            $sheet->setCellValue('C'.$x, $row->sn_keluar);
+            $sheet->setCellValue('D'.$x, $row->mac_keluar);
+            $sheet->setCellValue('E'.$x, $row->tgl_kirim);
+            $sheet->setCellValue('F'.$x, $row->wh_tujuan);
+            $sheet->setCellValue('G'.$x, $row->jumlah_keluar);
+            $sheet->setCellValue('H'.$x, $row->jenis_keluar);
+            $sheet->setCellValue('I'.$x, $row->tipe_keluar);
+            $x++;
+        }
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'barang_keluar';
+
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'.$filename.'.xlsx"');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
     }
 
 }

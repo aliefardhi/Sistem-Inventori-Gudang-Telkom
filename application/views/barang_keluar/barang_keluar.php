@@ -64,10 +64,10 @@
                         Tambah Data
                 </a>
 
-                <button type="button" class="btn btn_export mb-3 float-left">
+                <a href="<?= base_url('barang_keluar/export') ?>" class="btn btn_export mb-3 float-left">
                     <i style="background-color:green"class="far fa-file-excel"></i>
                         Export Excel
-                </button>
+                </a>
             </div>
 
             <div class="col">
