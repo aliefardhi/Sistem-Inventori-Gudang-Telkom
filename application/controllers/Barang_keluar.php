@@ -113,7 +113,7 @@ class Barang_keluar extends CI_Controller
             $x++;
         }
         $writer = new Xlsx($spreadsheet);
-        $filename = 'barang_keluar';
+        $filename = 'Daftar Barang Keluar';
 
         header('Content-Type: application/vnd.ms-excel');
         header('Content-Disposition: attachment;filename="'.$filename.'.xlsx"');

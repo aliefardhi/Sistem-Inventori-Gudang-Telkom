@@ -114,7 +114,7 @@ class Barang_masuk extends CI_Controller
             $x++;
         }
         $writer = new Xlsx($spreadsheet);
-        $filename = 'barang_masuk';
+        $filename = 'Daftar Barang Masuk';
 
         header('Content-Type: application/vnd.ms-excel');
         header('Content-Disposition: attachment;filename="'.$filename.'.xlsx"');
