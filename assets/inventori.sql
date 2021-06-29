@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2021 at 10:50 AM
+-- Generation Time: Jun 29, 2021 at 04:05 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -32,12 +32,19 @@ CREATE TABLE `b_keluar` (
   `wh_asal` varchar(100) NOT NULL,
   `sn_keluar` varchar(100) NOT NULL,
   `mac_keluar` varchar(100) NOT NULL,
-  `tgl_kirim` timestamp NULL DEFAULT NULL,
+  `tgl_kirim` date DEFAULT NULL,
   `wh_tujuan` varchar(100) NOT NULL,
   `jumlah_keluar` int(50) NOT NULL,
   `jenis_keluar` varchar(10) NOT NULL,
-  `tipe_keluar` varchar(10) NOT NULL
+  `tipe_keluar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `b_keluar`
+--
+
+INSERT INTO `b_keluar` (`id_keluar`, `wh_asal`, `sn_keluar`, `mac_keluar`, `tgl_kirim`, `wh_tujuan`, `jumlah_keluar`, `jenis_keluar`, `tipe_keluar`) VALUES
+(1, 'WH RATU SIANUM', '3344234112', '9983774582', '2021-06-17', 'WH BATURAJA', 200, 'ONT', 'ZTE F609 V5.3');
 
 -- --------------------------------------------------------
 
@@ -50,11 +57,25 @@ CREATE TABLE `b_masuk` (
   `vendor` varchar(50) NOT NULL,
   `sn` varchar(100) NOT NULL,
   `mac` varchar(100) NOT NULL,
-  `tgl_masuk` timestamp NULL DEFAULT NULL,
+  `tgl_masuk` date DEFAULT NULL,
   `wh_penerima` varchar(100) NOT NULL,
   `jenis` varchar(10) NOT NULL,
-  `tipe` varchar(10) NOT NULL
+  `tipe` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `b_masuk`
+--
+
+INSERT INTO `b_masuk` (`id`, `vendor`, `sn`, `mac`, `tgl_masuk`, `wh_penerima`, `jenis`, `tipe`) VALUES
+(1, 'Huawei', '555893021321', '1122324235324', '2021-06-17', 'GUDANG TELKOM AKSES JL.RATU SIANUM NO 13 PALEMBANG SUMATERA SELATAN', 'ONT', 'HG8245H5'),
+(13, 'adasd', 'dsdad', 'dad', '2021-06-22', 'dasd', 'sdad', 'sddsad'),
+(14, 'mmsmms', 'msmsmms', 'msmsms', '2021-06-22', 'lllsl', ';apapa', 'spsp'),
+(15, 'mm,', 'msdamsmd', ',mdasd,', '2021-06-22', 'eeee', 'rerer', 'tttt'),
+(16, 'sdasd', 'sdasd', 'sdasd', '2021-06-23', 'asdasd', 'we', 'wewe'),
+(17, 'sdasd', 'dsad', 'sdasd', '2021-06-23', 'asdsad', 'dsadasd', 'sadsad'),
+(18, 'uhiuashd', 'uhauishd', 'iuhuiasd', '2021-06-23', 'knaskjd', 'kjnasjkdn', 'asdjnasj'),
+(19, 'coba', 'cobasn', 'cobamac', '2021-06-23', 'whcoba', 'cobajenis', 'cobatipe');
 
 -- --------------------------------------------------------
 
@@ -106,13 +127,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `b_keluar`
 --
 ALTER TABLE `b_keluar`
-  MODIFY `id_keluar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `b_masuk`
 --
 ALTER TABLE `b_masuk`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user`
