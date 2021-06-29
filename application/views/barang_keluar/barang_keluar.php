@@ -32,10 +32,13 @@
              <hr style="color: white;" class="sidebar-divider mt-3">
 
             <li class="logout nav-item fs-5 fw-bold ">
-                <a class="nav-link" href="index.html">
-                <i style="color:white" class="fas fa-sign-out-alt"></i>
-                    <span>Logout</span></a>
+                <a class="nav-link" href="#modal-Logout" data-toggle="modal" onclick="$('#modal-Logout #form-Logout ').attr('action', '<?= base_url();?>auth/logout')">
+                    <i style="color:white" class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                </a>
             </li>
+
+            
 
         </ul>
         <!-- End of Sidebar -->
@@ -47,13 +50,8 @@
             <h1 class="judul h3 mb-5 text-center mt-4">DAFTAR BARANG KELUAR</h1>
 
             <!-- Success Alert -->
+            <div class="flash-data" data-flashdata="<?= $this->session->flashdata('input'); ?>"></div>
             <?php if($this->session->flashdata('input')): ?>
-            <div class="mx-auto alert alert-success alert-dismissible fade show" role="alert">
-                Data <strong>berhasil</strong> <?= $this->session->flashdata('input'); ?>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
             <?php endif; ?>
             <!-- End of success alert -->
 
@@ -105,7 +103,7 @@
                                     Edit
                                 </a>
 
-                                <a class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="<?= base_url(); ?>barang_keluar/hapusKeluar/<?= $bk->id_keluar; ?>">
+                                <a class="btn btn-danger btn-sm tombol-delete" href="<?= base_url(); ?>barang_keluar/hapusKeluar/<?= $bk->id_keluar; ?>">
                                     Delete
                                 </a>
                             </td>
@@ -118,6 +116,30 @@
             </div>
         </div>
         <!-- End of Content Wrapper -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-Logout" tabindex="-1" aria-labelledby="modal-Logout" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-Logout">Logout</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Apakah anda yakin ? 
+                </div>
+                <div class="modal-footer">
+                    <form id="form-Logout" action="">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                        <button type="submit" class="btn btn-primary">Ya</button>
+                    </form>
+                    
+                </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!-- End of Page Wrapper -->
