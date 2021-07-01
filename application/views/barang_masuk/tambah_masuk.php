@@ -15,49 +15,49 @@
                 <table class="m-sm-auto">
                     <tr>
                         <th width="135">Vendor</th>
-                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 18px; margin-top: 20px;" type="text" name="vendor">
+                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 18px; margin-top: 20px;" type="text" name="vendor" value="<?= set_value('vendor'); ?>">
                         <?= form_error('vendor','<small class="text-danger pl-3">','</small>') ?>
                         </td>    
                     </tr>
 
                     <tr>
                         <th width="135">SN</th>
-                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="sn">
+                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="sn" value="<?= set_value('sn'); ?>">
                         <?= form_error('sn','<small class="text-danger pl-3">','</small>') ?>
                         </td>
                     </tr>
 
                     <tr>
                         <th width="135">MAC</th>
-                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="mac">
+                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="mac" value="<?= set_value('mac'); ?>">
                         <?= form_error('mac','<small class="text-danger pl-3">','</small>') ?>     
                         </td>
                     </tr>
 
                     <tr>
                         <th width="135">Tanggal Masuk</th>
-                        <td style="display: block;"><input style="padding:10px; width:230px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px; margin-top: 20px;" type="date" name="tglmasuk">
+                        <td style="display: block;"><input style="padding:10px; width:230px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px; margin-top: 20px;" type="date" name="tglmasuk" value="<?= set_value('tglmasuk'); ?>">
                         <?= form_error('tglmasuk','<small class="text-danger pl-3">','</small>') ?>        
                         </td>
                     </tr>
 
                     <tr>
                         <th width="135">WH Penerima</th>
-                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="whpenerima">
+                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="whpenerima" value="<?= set_value('whpenerima'); ?>">
                         <?= form_error('whpenerima','<small class="text-danger pl-3">','</small>') ?>     
                         </td>
                     </tr>
 
                     <tr>
                         <th width="135">Jenis</th>
-                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="jenis">
+                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="jenis" value="<?= set_value('jenis'); ?>">
                         <?= form_error('jenis','<small class="text-danger pl-3">','</small>') ?>        
                         </td>
                     </tr>
 
                     <tr>
                         <th width="135">Tipe</th>
-                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="tipe">
+                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="tipe" value="<?= set_value('tipe'); ?>">
                         <?= form_error('tipe','<small class="text-danger pl-3">','</small>') ?>        
                         </td>
                     </tr>
