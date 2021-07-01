@@ -18,6 +18,7 @@ class Tambah_masuk extends CI_Controller
     }
 
     public function tambah_aksi(){
+        $asal = $this->input->post('whmasuk');
         $vendor = $this->input->post('vendor');
         $sn = $this->input->post('sn');
         $mac = $this->input->post('mac');
@@ -37,6 +38,7 @@ class Tambah_masuk extends CI_Controller
 
         $dataMasuk = array(
             'id' => $countBmasuk,
+            'wh_asal_masuk' => $asal,
             'vendor' => $vendor,
             'sn' => $sn,
             'mac' => $mac,
@@ -47,6 +49,7 @@ class Tambah_masuk extends CI_Controller
         );
 
         $data['b_masuk'] = $this->inv_model->tampil_data();
+        $this->form_validation->set_rules('whmasuk', 'WH Asal', 'required');
         $this->form_validation->set_rules('vendor', 'Vendor', 'required');
         $this->form_validation->set_rules('sn', 'SN', 'required');
         $this->form_validation->set_rules('mac', 'MAC', 'required');

@@ -71,6 +71,7 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>No</th>
+                            <th>WH Asal</th>
                             <th>Vendor</th>
                             <th>SN</th>
                             <th>MAC</th>
@@ -86,6 +87,7 @@
                         <?php foreach($b_masuk as $bm){ ?>
                         <tr>
                             <td><?= $index; ?></td>
+                            <td><?= $bm->wh_asal_masuk; ?></td>
                             <td><?= $bm->vendor; ?></td>
                             <td><?= $bm->sn; ?></td>
                             <td><?= $bm->mac; ?></td>

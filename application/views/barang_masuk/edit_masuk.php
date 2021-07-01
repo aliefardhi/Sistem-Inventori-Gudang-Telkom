@@ -16,14 +16,14 @@
 
                 <table class="m-sm-auto">
                     <tr>
-                        <th width="135">Vendor*</th>
-                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 18px; margin-top: 20px;" type="text" name="vendor" value="<?= $b_masuk['vendor']; ?>">
-                        <?= form_error('vendor','<small class="text-danger pl-3">','</small>') ?>
-                        </td>
+                        <th width="135">WH Asal *</th>
+                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 18px; margin-top: 20px;" type="text" name="whmasuk" value="<?= $b_masuk['wh_asal_masuk']; ?>">
+                        <?= form_error('whmasuk','<small class="text-danger pl-3">','</small>') ?>
+                        </td>    
                     </tr>
 
                     <tr>
-                        <th width="135">WH Asal*</th>
+                        <th width="135">Vendor*</th>
                         <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 18px; margin-top: 20px;" type="text" name="vendor" value="<?= $b_masuk['vendor']; ?>">
                         <?= form_error('vendor','<small class="text-danger pl-3">','</small>') ?>
                         </td>

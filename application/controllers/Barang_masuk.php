@@ -36,6 +36,7 @@ class Barang_masuk extends CI_Controller
         $data['b_masuk'] = $this->inv_model->getIdMasuk($idmasuk);
 
         $id_masuk = $this->input->post('idmasuk');
+        $asal = $this->input->post('whmasuk');
         $vendor = $this->input->post('vendor');
         $sn = $this->input->post('sn');
         $mac = $this->input->post('mac');
@@ -46,6 +47,7 @@ class Barang_masuk extends CI_Controller
 
         $dataMasuk = array(
             'id' => $id_masuk,
+            'wh_asal_masuk' => $asal,
             'vendor' => $vendor,
             'sn' => $sn,
             'mac' => $mac,
@@ -59,6 +61,7 @@ class Barang_masuk extends CI_Controller
             'id' => $id_masuk,
         );
 
+        $this->form_validation->set_rules('whmasuk', 'WH Asal', 'required');
         $this->form_validation->set_rules('vendor', 'Vendor', 'required');
         $this->form_validation->set_rules('sn', 'SN', 'required');
         $this->form_validation->set_rules('mac', 'MAC', 'required');
@@ -90,13 +93,14 @@ class Barang_masuk extends CI_Controller
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->setCellValue('A1', 'No');
-        $sheet->setCellValue('B1', 'Vendor');
-        $sheet->setCellValue('C1', 'SN');
-        $sheet->setCellValue('D1', 'MAC');
-        $sheet->setCellValue('E1', 'Tanggal Masuk');
-        $sheet->setCellValue('F1', 'WH Penerima');
-        $sheet->setCellValue('G1', 'Jenis');
-        $sheet->setCellValue('H1', 'Tipe');
+        $sheet->setCellValue('B1', 'WH Asal');
+        $sheet->setCellValue('C1', 'Vendor');
+        $sheet->setCellValue('D1', 'SN');
+        $sheet->setCellValue('E1', 'MAC');
+        $sheet->setCellValue('F1', 'Tanggal Masuk');
+        $sheet->setCellValue('G1', 'WH Penerima');
+        $sheet->setCellValue('H1', 'Jenis');
+        $sheet->setCellValue('I1', 'Tipe');
 
         $bMasuk = $this->inv_model->tampil_data();
 
@@ -104,13 +108,14 @@ class Barang_masuk extends CI_Controller
         $x = 2;
         foreach($bMasuk as $row){
             $sheet->setCellValue('A'.$x, $no++);
-            $sheet->setCellValue('B'.$x, $row->vendor);
-            $sheet->setCellValue('C'.$x, $row->sn);
-            $sheet->setCellValue('D'.$x, $row->mac);
-            $sheet->setCellValue('E'.$x, $row->tgl_masuk);
-            $sheet->setCellValue('F'.$x, $row->wh_penerima);
-            $sheet->setCellValue('G'.$x, $row->jenis);
-            $sheet->setCellValue('H'.$x, $row->tipe);
+            $sheet->setCellValue('B'.$x, $row->wh_asal_masuk);
+            $sheet->setCellValue('C'.$x, $row->vendor);
+            $sheet->setCellValue('D'.$x, $row->sn);
+            $sheet->setCellValue('E'.$x, $row->mac);
+            $sheet->setCellValue('F'.$x, $row->tgl_masuk);
+            $sheet->setCellValue('G'.$x, $row->wh_penerima);
+            $sheet->setCellValue('H'.$x, $row->jenis);
+            $sheet->setCellValue('I'.$x, $row->tipe);
             $x++;
         }
         $writer = new Xlsx($spreadsheet);
