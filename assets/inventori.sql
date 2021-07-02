@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2021 at 04:05 AM
+-- Generation Time: Jul 02, 2021 at 04:21 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -44,7 +44,11 @@ CREATE TABLE `b_keluar` (
 --
 
 INSERT INTO `b_keluar` (`id_keluar`, `wh_asal`, `sn_keluar`, `mac_keluar`, `tgl_kirim`, `wh_tujuan`, `jumlah_keluar`, `jenis_keluar`, `tipe_keluar`) VALUES
-(1, 'WH RATU SIANUM', '3344234112', '9983774582', '2021-06-17', 'WH BATURAJA', 200, 'ONT', 'ZTE F609 V5.3');
+(1, 'WH 3 Ilir', '3344234112', '9983774582', '2021-06-17', 'WH Baturaja', 500, 'ONT', 'ZTE F609 V5.3'),
+(2, 'WH 3 Ilir', '8876598', '993929', '2021-07-01', 'WH TLK', 90, 'ONT', 'HG8245U'),
+(3, 'WH 3 Ilir', '2312312', '5544345', '2021-06-23', 'WH Baturaja', 30, 'ONT', 'HG8245U'),
+(4, 'WH 3 Ilir', '88003912', '77848293', '2021-06-27', 'WH Kenten Ujung', 20, 'STB', 'B860H4K V5.0'),
+(5, 'WH 3 Ilir', '66526712', '99928312', '2021-07-05', 'WH Sebrang Ulu', 50, 'ONT', 'HG8245H');
 
 -- --------------------------------------------------------
 
@@ -54,6 +58,7 @@ INSERT INTO `b_keluar` (`id_keluar`, `wh_asal`, `sn_keluar`, `mac_keluar`, `tgl_
 
 CREATE TABLE `b_masuk` (
   `id` int(100) NOT NULL,
+  `wh_asal_masuk` varchar(128) NOT NULL,
   `vendor` varchar(50) NOT NULL,
   `sn` varchar(100) NOT NULL,
   `mac` varchar(100) NOT NULL,
@@ -67,15 +72,12 @@ CREATE TABLE `b_masuk` (
 -- Dumping data for table `b_masuk`
 --
 
-INSERT INTO `b_masuk` (`id`, `vendor`, `sn`, `mac`, `tgl_masuk`, `wh_penerima`, `jenis`, `tipe`) VALUES
-(1, 'Huawei', '555893021321', '1122324235324', '2021-06-17', 'GUDANG TELKOM AKSES JL.RATU SIANUM NO 13 PALEMBANG SUMATERA SELATAN', 'ONT', 'HG8245H5'),
-(13, 'adasd', 'dsdad', 'dad', '2021-06-22', 'dasd', 'sdad', 'sddsad'),
-(14, 'mmsmms', 'msmsmms', 'msmsms', '2021-06-22', 'lllsl', ';apapa', 'spsp'),
-(15, 'mm,', 'msdamsmd', ',mdasd,', '2021-06-22', 'eeee', 'rerer', 'tttt'),
-(16, 'sdasd', 'sdasd', 'sdasd', '2021-06-23', 'asdasd', 'we', 'wewe'),
-(17, 'sdasd', 'dsad', 'sdasd', '2021-06-23', 'asdsad', 'dsadasd', 'sadsad'),
-(18, 'uhiuashd', 'uhauishd', 'iuhuiasd', '2021-06-23', 'knaskjd', 'kjnasjkdn', 'asdjnasj'),
-(19, 'coba', 'cobasn', 'cobamac', '2021-06-23', 'whcoba', 'cobajenis', 'cobatipe');
+INSERT INTO `b_masuk` (`id`, `wh_asal_masuk`, `vendor`, `sn`, `mac`, `tgl_masuk`, `wh_penerima`, `jenis`, `tipe`) VALUES
+(1, 'WH Baturaja', 'Huawei', '99999', '1122324235324', '2021-06-17', 'WH 3 Ilir', 'ONT', 'HG8245H5'),
+(2, 'WH TLK', 'Huawei', '12345678', '12345678', '2021-07-01', 'WH 3 Ilir', 'ONT', 'HG 8245H'),
+(3, 'WH PGC', 'ZTE', '119922319', '233001923', '2021-06-09', 'WH 3 Ilir', 'STB', 'B860_V5.0'),
+(4, 'WH Sebrang Ulu', 'ZTE', '99288123', '38843181', '2021-05-17', 'WH 3 Ilir', 'ONT', 'F609_V2.0'),
+(5, 'WH Sekayu', 'Huawei', '55663234', '77785734', '2021-04-03', 'WH 3 Ilir', 'ONT', 'HG8245U');
 
 -- --------------------------------------------------------
 
