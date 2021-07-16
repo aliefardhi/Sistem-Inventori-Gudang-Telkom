@@ -15,6 +15,12 @@
             <hr style="color: white;" class="sidebar-divider mt-5">
 
             <!-- Nav Item - Dashboard -->
+            <li class="barangmasuk nav-item fs-5 fw-bold">
+                <a class="nav-link" href="<?= base_url('barang_masuk') ?>">
+                <i style="color:white" class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+          
             <li class="barangmasuk nav-item fs-5 fw-bold bg-light ">
                 <a class="nav-link" href="#">
                 <i style="color:black" class="fas fa-boxes"></i>

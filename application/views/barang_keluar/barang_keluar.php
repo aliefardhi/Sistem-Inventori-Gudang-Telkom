@@ -18,6 +18,12 @@
             <!-- Nav Item - Dashboard -->
             <li class="barangmasuk nav-item fs-5 fw-bold">
                 <a class="nav-link" href="<?= base_url('barang_masuk') ?>">
+                <i style="color:white" class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <li class="barangmasuk nav-item fs-5 fw-bold">
+                <a class="nav-link" href="<?= base_url('barang_masuk') ?>">
                 <i style="color:white" class="fas fa-boxes"></i>
                     <span>Barang Masuk</span></a>
             </li>
