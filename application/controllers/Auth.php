@@ -38,7 +38,7 @@ class Auth extends CI_Controller
                     'username' => $user['username'],
                 ];
                 $this->session->set_userdata($data);
-                redirect('barang_masuk');
+                redirect('dashboard');
             }
             else{
                 $this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible fade show" role="alert">Password salah!</div>');
