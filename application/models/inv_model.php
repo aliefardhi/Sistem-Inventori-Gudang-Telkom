@@ -34,4 +34,19 @@ class Inv_model extends CI_Model
         $this->db->where($where);
         $this->db->update($table,$data);
     }
+
+    public function count_bMasuk(){
+        $result = $this->db->query("SELECT * from b_masuk");
+        return $result;
+    }
+
+    public function count_bKeluar(){
+        $result = $this->db->query("SELECT * from b_keluar");
+        return $result;
+    }
+
+    public function sum_bKeluar(){
+        $result = $this->db->select('SUM(jumlah_keluar) as jumlah_keluar')->from('b_keluar')->get();
+        return $result->row()->jumlah_keluar;
+    }
 }

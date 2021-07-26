@@ -28,13 +28,6 @@
                     </tr>
 
                     <tr>
-                        <th width="135">WH Asal *</th>
-                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="whpenerima" value="<?= set_value('whpenerima'); ?>">
-                        <?= form_error('whpenerima','<small class="text-danger pl-3">','</small>') ?>     
-                        </td>
-                    </tr>
-
-                    <tr>
                         <th width="135">SN *</th>
                         <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="sn" value="<?= set_value('sn'); ?>">
                         <?= form_error('sn','<small class="text-danger pl-3">','</small>') ?>

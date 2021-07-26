@@ -67,7 +67,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Barang Masuk</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1000</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $this->fungsi->count_itemMasuk(); ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-boxes fa-3x text-gray-300"></i>
@@ -85,7 +85,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Barang Keluar</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">500</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlah_keluar ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-shipping-fast fa-3x text-gray-300"></i>
@@ -166,10 +166,10 @@
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+    <!-- Pie chart Barang Masuk -->
+    <script>
+
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
