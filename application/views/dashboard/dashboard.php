@@ -111,7 +111,7 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                        <canvas id="lineBM"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +176,9 @@
     ?>
     
     <!-- Chart.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="<?= base_url('assets/vendor/chart.js/Chart.js'); ?>"></script>
+    <script src="<?= base_url('assets/vendor/chart.js/docs/scripts/utils.js'); ?>"></script>
 
     <!-- <script>
         const labels = [
@@ -209,7 +211,7 @@
         );
     </script> -->
 
-    <!-- Doughnut chart Barang Masuk -->
+    <!-- Doughnut Chart Barang Masuk -->
     <script>
         // setup chart
         const data = {
@@ -241,4 +243,33 @@
             document.getElementById('chartoi'),
             config
         );
+    </script>
+
+    <!-- Line Chart Barang Masuk -->
+    <script>
+        // setup
+        const labels = Utils.months({count: 7}); //Utils.months({count: 7});
+        const dataLine = {
+            labels: labels,
+            datasets: [{
+                label: 'Dataset',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        // config line chart Barang Masuk
+        const configLineMasuk = {
+            type: 'line',
+            data: dataLine
+        };
+
+        // render
+        var lineChart = new Chart(
+            document.getElementById('lineBM'),
+            configLineMasuk
+        );
+
     </script>
