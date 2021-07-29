@@ -100,13 +100,13 @@
 
                     <div class="row">
 
-                        <!-- Area Chart -->
+                        <!-- Line Chart Barang Masuk -->
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4 mt-5">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Barang Masuk</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Total Barang Masuk Per Bulan</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
 
-                        <!-- Pie Chart -->
+                        <!-- Doughnut Chart Barang Masuk -->
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4 mt-5">
                                 <!-- Card Header - Dropdown -->
@@ -128,29 +128,46 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-pie pt-1 pb-2">
-                                        <canvas id="chartoi"></canvas>
+                                        <canvas id="doughnutBM"></canvas>
                                     </div>
-                                    <!-- <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Content Row -->
+                    <!-- Line Chart Barang Keluar -->
                     <div class="row">
-
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4 mt-5">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Total Barang Keluar Per Bulan</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="barKL"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Doughnut Chart Barang Keluar -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4 mt-5">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Sebaran Data Jenis Barang Keluar</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-1 pb-2">
+                                        <canvas id="doughnutKL"></canvas>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -167,18 +184,57 @@
     <!-- End of Page Wrapper -->
 
     <!-- Doughnut chart b_masuk data -->
-    <?php 
+    <?php
+        $label_vendor = ""; 
         $jumlah = null;
         foreach($hasil as $item){
             $sum = $item->total_vendor;
             $jumlah .= "$sum".", ";
+            $nama_vendor = $item->vendor;
+            $label_vendor .= "'$nama_vendor'".", ";
+        }
+    ?>
+
+    <!-- Doughnut chart b_keluar data -->
+    <?php
+        $label_jenis = ""; 
+        $jml_jenis = null;
+        foreach($jenis as $itemKL){
+            $total_jenis = $itemKL->count_jenis;
+            $jml_jenis .= "$total_jenis".", ";
+            $nama_jenis = $itemKL->jenis_keluar;
+            $label_jenis .= "'$nama_jenis'".", ";
+        }
+    ?>
+
+    <!-- Line chart b_masuk data -->
+    <?php 
+        $jml = null;
+        $time = "";
+        foreach($dataBM as $itemBM){
+            $label_time = $itemBM->month;
+            $time .= "'$label_time'".", ";
+            $jml_vendor = $itemBM->count_vendor;
+            $jml .= "$jml_vendor".", ";
+        }
+
+    ?>
+
+    <!-- Bar Chart b_keluar data -->
+    <?php 
+        $jml_keluar = null;
+        $time_keluar = "";
+        foreach($dataKL as $kl){
+            $label_keluar = $kl->tgl_kirim;
+            $time_keluar .= "'$label_keluar'".", ";
+            $total_kl = $kl->jumlah_keluar;
+            $jml_keluar .= "$total_kl".", ";
         }
     ?>
     
     <!-- Chart.js library -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <script src="<?= base_url('assets/vendor/chart.js/Chart.js'); ?>"></script>
-    <script src="<?= base_url('assets/vendor/chart.js/docs/scripts/utils.js'); ?>"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
     <!-- <script>
         const labels = [
@@ -215,11 +271,7 @@
     <script>
         // setup chart
         const data = {
-            labels: [
-                'Fiberhome',
-                'Huawei',
-                'ZTE'
-            ],
+            labels: [<?= $label_vendor; ?>],
             datasets:[{
                 label: '',
                 data: [<?= $jumlah; ?>],
@@ -240,20 +292,49 @@
         
         // render chart
         var mychart = new Chart(
-            document.getElementById('chartoi'),
+            document.getElementById('doughnutBM'),
             config
+        );
+    </script>
+
+    <!-- Doughnut Chart Barang Keluar -->
+    <script>
+        // setup chart
+        const dataJenis = {
+            labels: [<?= $label_jenis; ?>],
+            datasets:[{
+                label: '',
+                data: [<?= $jml_jenis; ?>],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4,
+            }]
+        };
+
+        // config chart
+        const configJenis = {
+            type: 'doughnut',
+            data: dataJenis,
+        }
+        
+        // render chart
+        var doughnutKL = new Chart(
+            document.getElementById('doughnutKL'),
+            configJenis
         );
     </script>
 
     <!-- Line Chart Barang Masuk -->
     <script>
         // setup
-        const labels = Utils.months({count: 7}); //Utils.months({count: 7});
         const dataLine = {
-            labels: labels,
+            labels: [<?= $time; ?>],
             datasets: [{
-                label: 'Dataset',
-                data: [65, 59, 80, 81, 56, 55, 40],
+                label: 'Total',
+                data: [<?= $jml; ?>],
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
@@ -263,7 +344,14 @@
         // config line chart Barang Masuk
         const configLineMasuk = {
             type: 'line',
-            data: dataLine
+            data: dataLine,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
         };
 
         // render
@@ -271,5 +359,55 @@
             document.getElementById('lineBM'),
             configLineMasuk
         );
+    </script>
 
+    <!-- Bar Chart Barang Keluar -->
+    <script>
+        // setup
+        const dataBarKL = {
+            labels: [<?= $time_keluar; ?>],
+            datasets: [{
+                label: 'Total',
+                data: [<?= $jml_keluar; ?>],
+                fill: false,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // config line chart Barang Masuk
+        const configBarKL = {
+            type: 'bar',
+            data: dataBarKL,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+
+        // render
+        var barKL = new Chart(
+            document.getElementById('barKL'),
+            configBarKL
+        );
     </script>
