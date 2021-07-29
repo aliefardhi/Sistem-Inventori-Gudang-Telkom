@@ -123,14 +123,14 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Barang Keluar</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Sebaran Data Vendor Barang Masuk</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
+                                    <div class="chart-pie pt-1 pb-2">
+                                        <canvas id="chartoi"></canvas>
                                     </div>
-                                    <div class="mt-4 text-center small">
+                                    <!-- <div class="mt-4 text-center small">
                                         <span class="mr-2">
                                             <i class="fas fa-circle text-primary"></i> Direct
                                         </span>
@@ -140,7 +140,7 @@
                                         <span class="mr-2">
                                             <i class="fas fa-circle text-info"></i> Referral
                                         </span>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -166,28 +166,79 @@
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Pie chart Barang Masuk -->
+    <!-- Doughnut chart b_masuk data -->
+    <?php 
+        $jumlah = null;
+        foreach($hasil as $item){
+            $sum = $item->total_vendor;
+            $jumlah .= "$sum".", ";
+        }
+    ?>
+    
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- <script>
+        const labels = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            ];
+            const data = {
+            labels: labels,
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data,
+            options: {}
+        };
+
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script> -->
+
+    <!-- Doughnut chart Barang Masuk -->
     <script>
+        // setup chart
+        const data = {
+            labels: [
+                'Fiberhome',
+                'Huawei',
+                'ZTE'
+            ],
+            datasets:[{
+                label: '',
+                data: [<?= $jumlah; ?>],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4,
+            }]
+        };
 
+        // config chart
+        const config = {
+            type: 'doughnut',
+            data: data
+        }
+        
+        // render chart
+        var mychart = new Chart(
+            document.getElementById('chartoi'),
+            config
+        );
     </script>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="<?= base_url('assets/'); ?>vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
-    <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
-
-</body>
-
-</html>

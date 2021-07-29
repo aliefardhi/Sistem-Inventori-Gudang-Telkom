@@ -12,6 +12,7 @@ class Dashboard extends CI_Controller {
         $data['title'] = 'Dashboard';
         $data['b_masuk'] = $this->inv_model->count_bMasuk();
         $data['jumlah_keluar'] = $this->inv_model->sum_bKeluar();
+        $data['hasil'] = $this->inv_model->total_vendorBM();
         $this->load->view('templates/header', $data);
         $this->load->view('dashboard/dashboard', $data);
         $this->load->view('templates/footer');

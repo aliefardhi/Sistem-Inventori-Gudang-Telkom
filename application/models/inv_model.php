@@ -49,4 +49,9 @@ class Inv_model extends CI_Model
         $result = $this->db->select('SUM(jumlah_keluar) as jumlah_keluar')->from('b_keluar')->get();
         return $result->row()->jumlah_keluar;
     }
+
+    public function total_vendorBM(){
+        $result = $this->db->select('vendor, count(vendor) as total_vendor')->from('b_masuk')->group_by('vendor')->get();
+        return $result->result();
+    }
 }
