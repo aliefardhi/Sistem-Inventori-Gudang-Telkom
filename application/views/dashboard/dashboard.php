@@ -36,7 +36,7 @@
             <!-- Divider -->
             <hr style="color: white;" class="sidebar-divider mt-4">
 
-            <li class="logout nav-item fs-5 fw-bold ">
+            <li class="nav-item fs-5 fw-bold" style="margin-top: 750px;">
                 <a class="nav-link" href="#modal-Logout" data-toggle="modal" onclick="$('#modal-Logout #form-Logout ').attr('action', '<?= base_url();?>auth/logout')">
                     <i style="color:white" class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
