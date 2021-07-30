@@ -50,6 +50,9 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
+             <!-- Page Heading -->
+             <h1 class="judul h3 mb-5 text-center mt-4">DASHBOARD</h1>
+
             <!-- Main Content -->
             <div id="content">
 
@@ -99,9 +102,8 @@
                     <!-- Content Row -->
 
                     <div class="row">
-
                         <!-- Line Chart Barang Masuk -->
-                        <div class="col-xl-8 col-lg-7">
+                        <div class="mx-auto" style="height:500px; width: 730px;">
                             <div class="card shadow mb-4 mt-5">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -118,7 +120,7 @@
                         </div>
 
                         <!-- Doughnut Chart Barang Masuk -->
-                        <div class="col-xl-4 col-lg-5">
+                        <div class="col-xl-4 col-lg-5 mx-auto">
                             <div class="card shadow mb-4 mt-5">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -137,7 +139,7 @@
 
                     <!-- Line Chart Barang Keluar -->
                     <div class="row">
-                        <div class="col-xl-8 col-lg-7">
+                        <div class="mx-auto" style="height:500px; width: 730px;">
                             <div class="card shadow mb-4 mt-5">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -154,7 +156,7 @@
                         </div>
     
                         <!-- Doughnut Chart Barang Keluar -->
-                        <div class="col-xl-4 col-lg-5">
+                        <div class="col-xl-4 col-lg-5 mx-auto">
                             <div class="card shadow mb-4 mt-5">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -179,6 +181,30 @@
 
         </div>
         <!-- End of Content Wrapper -->
+
+        <!-- Modal Logout -->
+        <div class="modal fade" id="modal-Logout" tabindex="-1" aria-labelledby="modal-Logout" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-Logout">Logout</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Apakah anda yakin ? 
+                </div>
+                <div class="modal-footer">
+                    <form id="form-Logout" action="">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                        <button type="submit" class="btn btn-primary">Ya</button>
+                    </form>
+                    
+                </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!-- End of Page Wrapper -->
