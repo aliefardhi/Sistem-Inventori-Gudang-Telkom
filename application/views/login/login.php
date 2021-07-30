@@ -19,7 +19,7 @@
                                         <img src="./assets/ta_logo.png" alt="logo" width="271" height="89">
                                     </div>
 
-                                    <!-- <?= $this->session->flashdata('message') ?> -->
+                                    <?= $this->session->flashdata('message') ?>
 
                                     <form class="user" method="POST" action="<?= base_url(); ?>auth">
                                         <div class="form-group">
