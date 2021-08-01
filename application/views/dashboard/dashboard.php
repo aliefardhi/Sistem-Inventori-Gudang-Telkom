@@ -70,7 +70,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Barang Masuk</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $this->fungsi->count_itemMasuk(); ?></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlah_masuk; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-boxes fa-3x text-gray-300"></i>
@@ -238,9 +238,9 @@
         $jml = null;
         $time = "";
         foreach($dataBM as $itemBM){
-            $label_time = $itemBM->month;
+            $label_time = $itemBM->tgl_masuk;
             $time .= "'$label_time'".", ";
-            $jml_vendor = $itemBM->count_vendor;
+            $jml_vendor = $itemBM->jumlah_masuk;
             $jml .= "$jml_vendor".", ";
         }
 

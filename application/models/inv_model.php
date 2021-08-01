@@ -50,6 +50,11 @@ class Inv_model extends CI_Model
         return $result->row()->jumlah_keluar;
     }
 
+    public function sum_bMasuk(){
+        $result = $this->db->select('SUM(jumlah_masuk) as jumlah_masuk')->from('b_masuk')->get();
+        return $result->row()->jumlah_masuk;
+    }
+
     public function total_vendorBM(){
         $result = $this->db->select('vendor, count(vendor) as total_vendor')->from('b_masuk')->group_by('vendor')->get();
         return $result->result();
@@ -67,6 +72,11 @@ class Inv_model extends CI_Model
 
     public function total_KL_month(){
         $result = $this->db->select('SUM(jumlah_keluar) as jumlah_keluar, monthname(tgl_kirim) as tgl_kirim')->from('b_keluar')->where('year(tgl_kirim) > 2020')->group_by('month(tgl_kirim)')->get();
+        return $result->result();
+    }
+
+    public function total_BM_month(){
+        $result = $this->db->select('SUM(jumlah_masuk) as jumlah_masuk, monthname(tgl_masuk) as tgl_masuk')->from('b_masuk')->where('year(tgl_masuk) > 2020')->group_by('month(tgl_masuk)')->get();
         return $result->result();
     }
 }

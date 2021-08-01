@@ -22,4 +22,9 @@ Class Fungsi{
         $this->ci->load->model('inv_model');
         return $this->ci->inv_model->sum_bKeluar()->result_array();
     }
+
+    public function total_bMasuk(){
+        $this->ci->load->model('inv_model');
+        return $this->ci->inv_model->sum_bMasuk()->result_array();
+    }
 }
