@@ -49,6 +49,13 @@
                     </tr>
 
                     <tr>
+                        <th width="135">Jumlah Masuk *</th>
+                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="jml_masuk" value="<?= set_value('jumlah_masuk'); ?>">
+                        <?= form_error('jumlah_masuk','<small class="text-danger pl-3">','</small>') ?>     
+                        </td>
+                    </tr>
+
+                    <tr>
                         <th width="135">WH Penerima *</th>
                         <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="whpenerima" value="<?= set_value('whpenerima'); ?>">
                         <?= form_error('whpenerima','<small class="text-danger pl-3">','</small>') ?>     
