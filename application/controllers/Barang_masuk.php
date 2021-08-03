@@ -41,6 +41,7 @@ class Barang_masuk extends CI_Controller
         $sn = $this->input->post('sn');
         $mac = $this->input->post('mac');
         $tanggalmasuk = $this->input->post('tanggalmasuk');
+        $jml_masuk = $this->input->post('jml_masuk');
         $whpenerima = $this->input->post('whpenerima');
         $jenis = $this->input->post('jenis');
         $tipe = $this->input->post('tipe');
@@ -52,6 +53,7 @@ class Barang_masuk extends CI_Controller
             'sn' => $sn,
             'mac' => $mac,
             'tgl_masuk' => $tanggalmasuk,
+            'jumlah_masuk' => $jml_masuk,
             'wh_penerima' => $whpenerima,
             'jenis' => $jenis,
             'tipe' => $tipe,
@@ -66,6 +68,7 @@ class Barang_masuk extends CI_Controller
         $this->form_validation->set_rules('sn', 'SN', 'required');
         $this->form_validation->set_rules('mac', 'MAC', 'required');
         $this->form_validation->set_rules('tanggalmasuk', 'Tanggal Masuk', 'required');
+        $this->form_validation->set_rules('jml_masuk', 'Jumlah Masuk', 'required');
         $this->form_validation->set_rules('whpenerima', 'WH Penerima', 'required');
         $this->form_validation->set_rules('jenis', 'jenis', 'required');
         $this->form_validation->set_rules('tipe', 'tipe', 'required');
@@ -98,9 +101,10 @@ class Barang_masuk extends CI_Controller
         $sheet->setCellValue('D1', 'SN');
         $sheet->setCellValue('E1', 'MAC');
         $sheet->setCellValue('F1', 'Tanggal Masuk');
-        $sheet->setCellValue('G1', 'WH Penerima');
-        $sheet->setCellValue('H1', 'Jenis');
-        $sheet->setCellValue('I1', 'Tipe');
+        $sheet->setCellValue('G1', 'Jumlah Masuk');
+        $sheet->setCellValue('H1', 'WH Penerima');
+        $sheet->setCellValue('I1', 'Jenis');
+        $sheet->setCellValue('J1', 'Tipe');
 
         $bMasuk = $this->inv_model->tampil_data();
 
@@ -113,9 +117,10 @@ class Barang_masuk extends CI_Controller
             $sheet->setCellValue('D'.$x, $row->sn);
             $sheet->setCellValue('E'.$x, $row->mac);
             $sheet->setCellValue('F'.$x, $row->tgl_masuk);
-            $sheet->setCellValue('G'.$x, $row->wh_penerima);
-            $sheet->setCellValue('H'.$x, $row->jenis);
-            $sheet->setCellValue('I'.$x, $row->tipe);
+            $sheet->setCellValue('G'.$x, $row->jumlah_masuk);
+            $sheet->setCellValue('H'.$x, $row->wh_penerima);
+            $sheet->setCellValue('I'.$x, $row->jenis);
+            $sheet->setCellValue('J'.$x, $row->tipe);
             $x++;
         }
         $writer = new Xlsx($spreadsheet);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2021 at 04:21 AM
+-- Generation Time: Aug 03, 2021 at 06:16 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -63,6 +63,7 @@ CREATE TABLE `b_masuk` (
   `sn` varchar(100) NOT NULL,
   `mac` varchar(100) NOT NULL,
   `tgl_masuk` date DEFAULT NULL,
+  `jumlah_masuk` int(128) NOT NULL,
   `wh_penerima` varchar(100) NOT NULL,
   `jenis` varchar(10) NOT NULL,
   `tipe` varchar(100) NOT NULL
@@ -72,12 +73,16 @@ CREATE TABLE `b_masuk` (
 -- Dumping data for table `b_masuk`
 --
 
-INSERT INTO `b_masuk` (`id`, `wh_asal_masuk`, `vendor`, `sn`, `mac`, `tgl_masuk`, `wh_penerima`, `jenis`, `tipe`) VALUES
-(1, 'WH Baturaja', 'Huawei', '99999', '1122324235324', '2021-06-17', 'WH 3 Ilir', 'ONT', 'HG8245H5'),
-(2, 'WH TLK', 'Huawei', '12345678', '12345678', '2021-07-01', 'WH 3 Ilir', 'ONT', 'HG 8245H'),
-(3, 'WH PGC', 'ZTE', '119922319', '233001923', '2021-06-09', 'WH 3 Ilir', 'STB', 'B860_V5.0'),
-(4, 'WH Sebrang Ulu', 'ZTE', '99288123', '38843181', '2021-05-17', 'WH 3 Ilir', 'ONT', 'F609_V2.0'),
-(5, 'WH Sekayu', 'Huawei', '55663234', '77785734', '2021-04-03', 'WH 3 Ilir', 'ONT', 'HG8245U');
+INSERT INTO `b_masuk` (`id`, `wh_asal_masuk`, `vendor`, `sn`, `mac`, `tgl_masuk`, `jumlah_masuk`, `wh_penerima`, `jenis`, `tipe`) VALUES
+(1, 'WH Baturaja', 'Huawei', '99999', '1122324235324', '2021-06-17', 100, 'WH 3 Ilir', 'ONT', 'HG8245H5'),
+(2, 'WH TLK', 'Huawei', '12345678', '12345678', '2021-07-01', 20, 'WH 3 Ilir', 'ONT', 'HG 8245H'),
+(3, 'WH PGC', 'ZTE', '119922319', '233001923', '2021-06-09', 50, 'WH 3 Ilir', 'STB', 'B860_V5.0'),
+(4, 'WH Sebrang Ulu', 'ZTE', '99288123', '38843181', '2021-05-17', 24, 'WH 3 Ilir', 'ONT', 'F609_V2.0'),
+(5, 'WH Sekayu', 'Huawei', '55663234', '77785734', '2021-04-03', 200, 'WH 3 Ilir', 'ONT', 'HG8245U'),
+(6, 'WH PGC', 'Huawei', '3434234', '5544562234', '2021-06-09', 150, 'WH 3 Ilir', 'ONT', 'HG8245H5'),
+(7, 'WH Kenten Ujung', 'Fiberhome', '4453434', '88867655', '2021-06-15', 400, 'WH 3 Ilir', 'ONT', 'HG6145F'),
+(8, 'WH Baturaja', 'Huawei', '5554523', '21231245', '2021-07-23', 44, 'WH 3 Ilir', 'ONT', 'HG8245U'),
+(9, 'WH Baturaja', 'ZTE', '8884943', '9992012', '2021-06-11', 50, 'WH 3 Ilir', 'ONT', 'F609_V2.0');
 
 -- --------------------------------------------------------
 

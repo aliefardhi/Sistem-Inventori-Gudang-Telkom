@@ -28,13 +28,6 @@
                     </tr>
 
                     <tr>
-                        <th width="135">WH Asal *</th>
-                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="whpenerima" value="<?= set_value('whpenerima'); ?>">
-                        <?= form_error('whpenerima','<small class="text-danger pl-3">','</small>') ?>     
-                        </td>
-                    </tr>
-
-                    <tr>
                         <th width="135">SN *</th>
                         <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="sn" value="<?= set_value('sn'); ?>">
                         <?= form_error('sn','<small class="text-danger pl-3">','</small>') ?>
@@ -52,6 +45,13 @@
                         <th width="135">Tanggal Masuk *</th>
                         <td style="display: block;"><input style="padding:10px; width:230px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px; margin-top: 20px;" type="date" name="tglmasuk" value="<?= set_value('tglmasuk'); ?>">
                         <?= form_error('tglmasuk','<small class="text-danger pl-3">','</small>') ?>        
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th width="135">Jumlah Masuk *</th>
+                        <td><input style="padding: 10px; width:370px; height: 30px; border-radius:5px; background: #C0C0C0; border-color: #808080; border: 5px; margin-bottom: 20px;  margin-top: 20px;" type="text" name="jml_masuk" value="<?= set_value('jumlah_masuk'); ?>">
+                        <?= form_error('jumlah_masuk','<small class="text-danger pl-3">','</small>') ?>     
                         </td>
                     </tr>
 

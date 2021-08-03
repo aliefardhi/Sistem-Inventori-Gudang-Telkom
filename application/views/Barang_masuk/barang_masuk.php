@@ -15,6 +15,12 @@
             <hr style="color: white;" class="sidebar-divider mt-5">
 
             <!-- Nav Item - Dashboard -->
+            <li class="dashboard nav-item fs-5 fw-bold">
+                <a class="nav-link" href="<?= base_url('dashboard') ?>">
+                <i style="color:white" class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+          
             <li class="barangmasuk nav-item fs-5 fw-bold bg-light ">
                 <a class="nav-link" href="#">
                 <i style="color:black" class="fas fa-boxes"></i>
@@ -76,6 +82,7 @@
                             <th>SN</th>
                             <th>MAC</th>
                             <th>Tanggal Masuk</th>
+                            <th>Jumlah Masuk</th>
                             <th>WH Penerima</th>
                             <th>Jenis</th>
                             <th>Tipe</th>
@@ -92,6 +99,7 @@
                             <td><?= $bm->sn; ?></td>
                             <td><?= $bm->mac; ?></td>
                             <td><?= $bm->tgl_masuk; ?></td>
+                            <td><?= $bm->jumlah_masuk; ?></td>
                             <td style="table-layout: auto; width: 15%;"><?= $bm->wh_penerima; ?></td>
                             <td><?= $bm->jenis; ?></td>
                             <td><?= $bm->tipe; ?></td>

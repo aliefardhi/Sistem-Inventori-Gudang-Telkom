@@ -23,6 +23,7 @@ class Tambah_masuk extends CI_Controller
         $sn = $this->input->post('sn');
         $mac = $this->input->post('mac');
         $tglmasuk = $this->input->post('tglmasuk');
+        $jml_masuk = $this->input->post('jml_masuk');
         $whpenerima = $this->input->post('whpenerima');
         $jenis = $this->input->post('jenis');
         $tipe = $this->input->post('tipe');
@@ -43,6 +44,7 @@ class Tambah_masuk extends CI_Controller
             'sn' => $sn,
             'mac' => $mac,
             'tgl_masuk' => $tglmasuk,
+            'jumlah_masuk' => $jml_masuk,
             'wh_penerima' => $whpenerima,
             'jenis' => $jenis,
             'tipe' => $tipe
@@ -54,6 +56,7 @@ class Tambah_masuk extends CI_Controller
         $this->form_validation->set_rules('sn', 'SN', 'required');
         $this->form_validation->set_rules('mac', 'MAC', 'required');
         $this->form_validation->set_rules('tglmasuk', 'Tanggal Masuk', 'required');
+        $this->form_validation->set_rules('jml_masuk', 'Jumlah Masuk', 'required');
         $this->form_validation->set_rules('whpenerima', 'WH Penerima', 'required');
         $this->form_validation->set_rules('jenis', 'jenis', 'required');
         $this->form_validation->set_rules('tipe', 'tipe', 'required');

@@ -4,7 +4,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class=" sidebar navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="sidebar navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Nav Item Logo--->
             <li class="logosidebar">
@@ -16,6 +16,12 @@
             <hr style="color: white;" class="sidebar-divider mt-5">
 
             <!-- Nav Item - Dashboard -->
+            <li class="dashboard nav-item fs-5 fw-bold">
+                <a class="nav-link" href="<?= base_url('dashboard') ?>">
+                <i style="color:white" class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
             <li class="barangmasuk nav-item fs-5 fw-bold">
                 <a class="nav-link" href="<?= base_url('barang_masuk') ?>">
                 <i style="color:white" class="fas fa-boxes"></i>
@@ -37,8 +43,6 @@
                         <span>Logout</span>
                 </a>
             </li>
-
-            
 
         </ul>
         <!-- End of Sidebar -->
