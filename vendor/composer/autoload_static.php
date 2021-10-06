@@ -4,11 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
+class ComposerStaticInit76885117063d6231fbd68b8f30d5d935
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '3af723442581d6c310bf44543f9f5c60' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Functions/adjoint.php',
         'd803221834c8b57fec95debb5406a797' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Functions/antidiagonal.php',
         '4714cafbd3be4c72c274a25eae9396bb' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Functions/cofactors.php',
@@ -68,7 +69,6 @@ class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
         'f190e3308e6ca23234a2875edc985c03' => __DIR__ . '/..' . '/markbaker/complex/classes/src/operations/divideby.php',
         'ac9e33ce6841aa5bf5d16d465a2f03a7' => __DIR__ . '/..' . '/markbaker/complex/classes/src/operations/divideinto.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -89,6 +89,7 @@ class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
+            'Svg\\' => 4,
         ),
         'P' => 
         array (
@@ -103,8 +104,13 @@ class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
             'MyCLabs\\Enum\\' => 13,
             'Matrix\\' => 7,
         ),
+        'F' => 
+        array (
+            'FontLib\\' => 8,
+        ),
         'D' => 
         array (
+            'Dompdf\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
@@ -118,8 +124,8 @@ class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'ZipStream\\' => 
         array (
@@ -140,6 +146,10 @@ class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
+        ),
+        'Svg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
         ),
         'Psr\\SimpleCache\\' => 
         array (
@@ -170,6 +180,14 @@ class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
         ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
+        ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -192,6 +210,13 @@ class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
                 0 => __DIR__ . '/..' . '/mikey179/vfsstream/src/main/php',
             ),
         ),
+        'S' => 
+        array (
+            'Sabberworm\\CSS' => 
+            array (
+                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
+            ),
+        ),
         'H' => 
         array (
             'HTMLPurifier' => 
@@ -203,9 +228,15 @@ class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'HTML5_Data' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Data.php',
+        'HTML5_InputStream' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/InputStream.php',
+        'HTML5_Parser' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Parser.php',
+        'HTML5_Tokenizer' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
+        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
@@ -673,10 +704,10 @@ class ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc12e0acb07de2bf83547e5cb7209f230::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit76885117063d6231fbd68b8f30d5d935::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit76885117063d6231fbd68b8f30d5d935::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit76885117063d6231fbd68b8f30d5d935::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit76885117063d6231fbd68b8f30d5d935::$classMap;
 
         }, null, ClassLoader::class);
     }
