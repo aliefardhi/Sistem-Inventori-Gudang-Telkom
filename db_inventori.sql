@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2021 at 06:46 AM
+-- Generation Time: Oct 07, 2021 at 04:21 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -44,9 +44,9 @@ INSERT INTO `barang` (`id`, `kode_barang`, `nama_barang`, `stok`, `satuan`, `tgl
 (1, '36143613', 'ONT ZTE F609', 34, 'ont', '2021-10-01'),
 (2, '158768555', 'ONT ZTE F609_V5.3', 25, 'ont', '2021-09-13'),
 (4, '9999999', 'ONT HUAWEI HG 8245H5', 8, 'ont', '2021-09-18'),
-(5, '88888888', 'ONT HUAWEI HG 8245H5', 7, 'ont', '2021-10-02'),
+(5, '88888888', 'ONT HUAWEI HG 8245H5', 2, 'ont', '2021-10-02'),
 (7, '12345', 'STB ZTE B860H_V2.0', 91, 'stb', '2021-09-22'),
-(10, '111999200', 'ONT ZTE F609_V5.3', 1000, 'ont', '2021-10-05');
+(10, '111999200', 'ONT ZTE F609_V5.3', 300, 'ont', '2021-10-05');
 
 -- --------------------------------------------------------
 
@@ -109,7 +109,7 @@ INSERT INTO `data_toko` (`id`, `nama_toko`, `nama_pemilik`, `no_telepon`, `alama
 --
 
 CREATE TABLE `detail_keluar` (
-  `no_keluar` varchar(25) DEFAULT NULL,
+  `no_keluar` varchar(25) NOT NULL,
   `nama_barang` varchar(80) DEFAULT NULL,
   `jumlah` int(11) DEFAULT NULL,
   `satuan` varchar(20) DEFAULT NULL,
@@ -121,18 +121,19 @@ CREATE TABLE `detail_keluar` (
 --
 
 INSERT INTO `detail_keluar` (`no_keluar`, `nama_barang`, `jumlah`, `satuan`, `kode_barang`) VALUES
+('', 'STB ZTE B860H_V2.0', 7, 'stb', '12345'),
+('TR1584538765', 'Mouse', 1, 'pcs', ''),
 ('TR1584538942', 'Keyboard', 1, 'pcs', ''),
-('TR1584538942', 'Mouse', 1, 'pcs', ''),
 ('TR1633266434', 'Keyboard', 3, 'pcs', ''),
 ('TR1633364503', 'ONT HUAWEI HG 8245H5', 2, 'ont', ''),
 ('TR1633364676', 'ONT HUAWEI HG 8245H5', 3, 'ont', ''),
 ('TR1633365063', 'ONT HUAWEI HG 8245H5', 4, 'ont', '88888888'),
 ('TR1633365083', 'ONT HUAWEI HG 8245H5', 1, 'ont', '9999999'),
 ('TR1633365144', 'ONT HUAWEI HG 8245H5', 5, 'ont', '88888888'),
-(NULL, 'STB ZTE B860H_V2.0', 7, 'stb', '12345'),
 ('TR1633433962', 'STB ZTE B860H_V2.0', 1, 'stb', '12345'),
 ('TR1633434202', 'STB ZTE B860H_V2.0', 3, 'stb', '88888888'),
-('TR1633434556', 'ONT HUAWEI HG 8245H5', 1, 'ont', '12345');
+('TR1633434556', 'ONT HUAWEI HG 8245H5', 1, 'ont', '12345'),
+('TR1633528319', 'ONT ZTE F609_V5.3', 100, 'ont', '111999200');
 
 -- --------------------------------------------------------
 
@@ -200,7 +201,9 @@ INSERT INTO `penerimaan` (`id`, `no_terima`, `tgl_terima`, `jam_terima`, `nama_s
 
 CREATE TABLE `pengeluaran` (
   `id` int(11) NOT NULL,
-  `no_keluar` varchar(25) DEFAULT NULL,
+  `no_keluar` varchar(25) NOT NULL,
+  `kode_barang` varchar(20) NOT NULL,
+  `nama_barang` varchar(80) NOT NULL,
   `tgl_keluar` varchar(25) DEFAULT NULL,
   `jam_keluar` varchar(10) DEFAULT NULL,
   `jumlah_keluar` int(11) NOT NULL,
@@ -212,10 +215,10 @@ CREATE TABLE `pengeluaran` (
 -- Dumping data for table `pengeluaran`
 --
 
-INSERT INTO `pengeluaran` (`id`, `no_keluar`, `tgl_keluar`, `jam_keluar`, `jumlah_keluar`, `nama_customer`, `nama_petugas`) VALUES
-(25, 'TR1633433962', '2021-09-05', '18:39', 101, 'WH Prabumulih', 'WH 3 Ilir'),
-(26, 'TR1633434202', '2021-10-05', '18:43', 20, 'WH Baturaja', 'WH 3 Ilir'),
-(27, 'TR1633434556', '2021-10-05', '18:49', 240, 'WH Lubuk Linggau', 'WH 3 Ilir');
+INSERT INTO `pengeluaran` (`id`, `no_keluar`, `kode_barang`, `nama_barang`, `tgl_keluar`, `jam_keluar`, `jumlah_keluar`, `nama_customer`, `nama_petugas`) VALUES
+(49, 'TR1633539008', '111999200', 'ONT ZTE F609_V5.3', '2021-10-06', '23:50', 1, 'WH Sebrang Ulu', 'WH 3 Ilir'),
+(50, 'TR1633539076', '88888888', 'ONT HUAWEI HG 8245H5', '2021-10-06', '23:51', 5, 'WH Bengkulu', 'WH 3 Ilir'),
+(51, 'TR1633540147', '111999200', 'ONT ZTE F609_V5.3', '2021-10-07', '00:09', 79, 'WH Baturaja', 'WH 3 Ilir');
 
 -- --------------------------------------------------------
 
@@ -307,6 +310,12 @@ ALTER TABLE `data_toko`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `detail_keluar`
+--
+ALTER TABLE `detail_keluar`
+  ADD PRIMARY KEY (`no_keluar`);
+
+--
 -- Indexes for table `penerimaan`
 --
 ALTER TABLE `penerimaan`
@@ -370,7 +379,7 @@ ALTER TABLE `penerimaan`
 -- AUTO_INCREMENT for table `pengeluaran`
 --
 ALTER TABLE `pengeluaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `pengguna`

@@ -31,6 +31,13 @@ class M_barang extends CI_Model{
 		return $query->row();
 	}
 
+	public function lihat_nama_barang_kode($kode_barang){
+		$query = $this->db->select('*');
+		$query = $this->db->where(['kode_barang' => $kode_barang]);
+		$query = $this->db->get($this->_table);
+		return $query->row();
+	}
+
 	public function lihat_nama_barang($nama_barang){
 		$query = $this->db->select('*');
 		$query = $this->db->where(['nama_barang' => $nama_barang]);
@@ -72,8 +79,18 @@ class M_barang extends CI_Model{
         return $query->result();
 	}
 
+	public function bMasuk_tahunan(){
+		$query = $this->db->select('SUM(stok) as jumlah_masuk, year(tgl_masuk) as tgl_masuk')->from('barang')->where('year(tgl_masuk) > 2020')->group_by('year(tgl_masuk)')->get();
+        return $query->result();
+	}
+
 	public function bKeluar_bulanan(){
 		$query = $this->db->select('SUM(jumlah_keluar) as jumlah_keluar, monthname(tgl_keluar) as tgl_keluar')->from('pengeluaran')->where('year(tgl_keluar) > 2020')->group_by('month(tgl_keluar)')->get();
+		return $query->result();
+	}
+
+	public function bKeluar_tahunan(){
+		$query = $this->db->select('SUM(jumlah_keluar) as jumlah_keluar, year(tgl_keluar) as tgl_keluar')->from('pengeluaran')->where('year(tgl_keluar) > 2020')->group_by('year(tgl_keluar)')->get();
 		return $query->result();
 	}
 }

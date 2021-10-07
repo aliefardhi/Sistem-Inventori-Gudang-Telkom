@@ -23,10 +23,10 @@ class Dashboard extends CI_Controller{
 		$this->data['jumlah_supplier'] = $this->m_supplier->jumlah();
 		$this->data['total_stok_barang'] = $this->m_barang->total_stok_barang();
 		$this->data['jumlah_pengeluaran'] = $this->m_pengeluaran->jumlah();
-		$this->data['total_stok_keluar'] = $this->m_detail_keluar->total_stok_keluar();
+		$this->data['total_stok_keluar'] = $this->m_pengeluaran->total_stok_keluar();
 		$this->data['jumlah_pengguna'] = $this->m_pengguna->jumlah();
-		$this->data['bMasuk_bulanan'] = $this->m_barang->bMasuk_bulanan();
-		$this->data['bKeluar_bulanan'] = $this->m_barang->bKeluar_bulanan();
+		$this->data['bMasuk_tahunan'] = $this->m_barang->bMasuk_tahunan();
+		$this->data['bKeluar_tahunan'] = $this->m_barang->bKeluar_tahunan();
 		$this->load->view('dashboard', $this->data);
 	}
 }

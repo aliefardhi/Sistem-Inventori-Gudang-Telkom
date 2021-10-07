@@ -5,7 +5,7 @@ class M_pengeluaran extends CI_Model {
 
 	public function lihat(){
 		// return $this->db->get($this->_table)->result();
-		$query = $this->db->query('SELECT * FROM pengeluaran natural join detail_keluar');
+		$query = $this->db->query('SELECT * FROM pengeluaran');
 		return $query->result();
 	} 
 
@@ -24,5 +24,10 @@ class M_pengeluaran extends CI_Model {
 
 	public function hapus($no_keluar){
 		return $this->db->delete($this->_table, ['no_keluar' => $no_keluar]);
+	}
+
+	public function total_stok_keluar(){
+		$query = $this->db->query('SELECT SUM(jumlah_keluar) as jumlah_keluar FROM pengeluaran');
+		return $query->row()->jumlah_keluar;
 	}
 }

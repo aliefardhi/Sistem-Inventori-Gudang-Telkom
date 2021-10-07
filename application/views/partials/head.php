@@ -9,3 +9,4 @@
 	<link href="<?= base_url('sb-admin') ?>/css/sb-admin-2.min.css" rel="stylesheet">
 	<link href="<?= base_url('sb-admin') ?>/css/mystyle.css" rel="stylesheet">
 	<link href="<?= base_url('sb-admin') ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="<?= base_url('sb-admin/img/favicon.ico'); ?>" type="image/x-icon">

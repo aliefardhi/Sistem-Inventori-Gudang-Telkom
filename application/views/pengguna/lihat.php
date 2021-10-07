@@ -52,7 +52,7 @@
 									<tr>
 										<td>No</td>
 										<!-- <td>Kode</td> -->
-										<td>Nama</td>
+										<td>Nama Warehouse</td>
 										<td>Username</td>
 										<td>Password</td>
 										<td>Aksi</td>
@@ -68,7 +68,7 @@
 											<td><?= $pengguna->password ?></td>
 											<td>
 												<a href="<?= base_url('pengguna/ubah/' . $pengguna->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-pen"></i></a>
-												<a onclick="return confirm('apakah anda yakin?')" href="<?= base_url('pengguna/hapus/' . $pengguna->id) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+												<!-- <a onclick="return confirm('apakah anda yakin?')" href="<?= base_url('pengguna/hapus/' . $pengguna->id) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a> -->
 											</td>
 										</tr>
 									<?php endforeach ?>

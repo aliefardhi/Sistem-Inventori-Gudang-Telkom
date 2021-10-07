@@ -4,7 +4,7 @@ class M_detail_keluar extends CI_Model {
 	protected $_table = 'detail_keluar';
 
 	public function tambah($data){
-		return $this->db->insert_batch($this->_table, $data);
+		return $this->db->insert($this->_table, $data);
 	}
 
 	public function lihat_no_keluar($no_keluar){

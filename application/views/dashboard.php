@@ -45,7 +45,7 @@
 			                <div class="card-body">
 			                  <div class="row no-gutters align-items-center">
 			                    <div class="col mr-2">
-			                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Barang</div>
+			                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Data Barang Masuk</div>
 			                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlah_barang ?></div>
 			                    </div>
 			                    <div class="col-auto">
@@ -79,7 +79,7 @@
 			                <div class="card-body">
 			                  <div class="row no-gutters align-items-center">
 			                    <div class="col mr-2">
-			                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Pengeluaran</div>
+			                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Data Barang Keluar</div>
 			                      <div class="row no-gutters align-items-center">
 			                        <div class="col-auto">
 			                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_pengeluaran ?></div>
@@ -118,7 +118,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Sebaran Data Barang Masuk Per Bulan</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Sebaran Data Barang Masuk Per Tahun</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -134,7 +134,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Sebaran Data Barang Keluar Per Bulan</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Sebaran Data Barang Keluar Per Tahun</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -190,7 +190,7 @@
     <?php 
         $jml = null;
         $time = "";
-        foreach($bMasuk_bulanan as $itemBM){
+        foreach($bMasuk_tahunan as $itemBM){
             $label_time = $itemBM->tgl_masuk;
             $time .= "'$label_time'".", ";
             $jml_masuk = $itemBM->jumlah_masuk;
@@ -201,7 +201,7 @@
     <?php 
         $jml_kl = null;
         $time_keluar = "";
-        foreach($bKeluar_bulanan as $itemBK){
+        foreach($bKeluar_tahunan as $itemBK){
             $label_time_keluar = $itemBK->tgl_keluar;
             $time_keluar .= "'$label_time_keluar'".", ";
             $jml_keluar = $itemBK->jumlah_keluar;

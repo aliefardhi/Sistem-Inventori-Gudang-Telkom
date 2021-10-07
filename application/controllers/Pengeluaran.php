@@ -32,30 +32,41 @@ class Pengeluaran extends CI_Controller{
 	}
 
 	public function proses_tambah(){
-		$jumlah_barang_keluar = count($this->input->post('kode_barang_hidden'));
+		// $jumlah_barang_keluar = count($this->input->post('kode_barang_hidden'));
 
 		$data_keluar = [
 			'no_keluar' => $this->input->post('no_keluar'),
 			'tgl_keluar' => $this->input->post('tgl_keluar'),
 			'jam_keluar' => $this->input->post('jam_keluar'),
+			'jumlah_keluar' => $this->input->post('jumlah'),
 			'nama_customer' => $this->input->post('nama_customer'),
 			'nama_petugas' => $this->input->post('nama_petugas'),
+			'kode_barang' => $this->input->post('kode_barang'),
+			'nama_barang' => $this->input->post('nama_barang'),
 		];
 
-		$data_detail_keluar = [];
+		$data_detail_keluar = [
+			'no_keluar' => $this->input->post('no_keluar'),
+			'nama_barang' => $this->input->post('nama_barang_hidden'),
+			'jumlah' => $this->input->post('jumlah_hidden'),
+			'satuan' => $this->input->post('satuan_hidden'),
+			'kode_barang' => $this->input->post('kode_barang_hidden')
+		];
 
-		for($i = 0; $i < $jumlah_barang_keluar; $i++){
-			array_push($data_detail_keluar, ['no_keluar' => $this->input->post('no_keluar')]);
-			$data_detail_keluar[$i]['nama_barang'] = $this->input->post('nama_barang_hidden')[$i];
-			$data_detail_keluar[$i]['jumlah'] = $this->input->post('jumlah_hidden')[$i];
-			$data_detail_keluar[$i]['satuan'] = $this->input->post('satuan_hidden')[$i];
-			$data_detail_keluar[$i]['kode_barang'] = $this->input->post('kode_barang_hidden')[$i];
-		}
+		// for($i = 0; $i < $jumlah_barang_keluar; $i++){
+		// 	array_push($data_detail_keluar, ['no_keluar' => $this->input->post('no_keluar')]);
+		// 	$data_detail_keluar[$i]['nama_barang'] = $this->input->post('nama_barang_hidden')[$i];
+		// 	$data_detail_keluar[$i]['jumlah'] = $this->input->post('jumlah_hidden')[$i];
+		// 	$data_detail_keluar[$i]['satuan'] = $this->input->post('satuan_hidden')[$i];
+		// 	$data_detail_keluar[$i]['kode_barang'] = $this->input->post('kode_barang_hidden')[$i];
+		// }
 
-		if($this->m_pengeluaran->tambah($data_keluar) && $this->m_detail_keluar->tambah($data_detail_keluar)){
-			for ($i=0; $i < $jumlah_barang_keluar ; $i++) { 
-				$this->m_barang->min_stok($data_detail_keluar[$i]['jumlah'], $data_detail_keluar[$i]['kode_barang']) or die('gagal min stok');
-			}
+		if($this->m_pengeluaran->tambah($data_keluar)){
+			// && $this->m_detail_keluar->tambah($data_detail_keluar)
+			// for ($i=0; $i < $jumlah_barang_keluar ; $i++) { 
+			// 	$this->m_barang->min_stok($data_detail_keluar[$i]['jumlah'], $data_detail_keluar[$i]['kode_barang']) or die('gagal min stok');
+			// }
+			$this->m_barang->min_stok($data_keluar['jumlah_keluar'], $data_keluar['kode_barang']) or die('gagal min stok');
 			$this->session->set_flashdata('success', 'Ditambahkan!');
 			redirect('pengeluaran');
 		}
@@ -80,6 +91,11 @@ class Pengeluaran extends CI_Controller{
 		}
 	}
 
+	public function get_all_barang_kode(){
+		$data = $this->m_barang->lihat_nama_barang_kode($_POST['kode_barang']);
+		echo json_encode($data);
+	}
+
 	public function get_all_barang(){
 		$data = $this->m_barang->lihat_nama_barang($_POST['nama_barang']);
 		echo json_encode($data);
@@ -98,7 +114,7 @@ class Pengeluaran extends CI_Controller{
         $sheet->setCellValue('D1', 'Nama Barang');
         $sheet->setCellValue('E1', 'SN');
         $sheet->setCellValue('F1', 'Jumlah Keluar');
-		$sheet->setCellValue('G1', 'Tanggal Kirim');
+		$sheet->setCellValue('G1', 'Tanggal Keluar');
         $bKeluar = $this->m_pengeluaran->lihat();
 
         $no = 1;

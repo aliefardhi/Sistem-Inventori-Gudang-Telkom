@@ -94,17 +94,18 @@
 												</div>
 												<div class="form-group col-3">
 													<label>Jumlah</label>
-													<input type="number" name="jumlah" value="" class="form-control" readonly min='1'>
+													<input type="number" name="jumlah" value="" class="form-control" min='1'>
 												</div>
 												<div class="form-group col-1">
 													<label for="">&nbsp;</label>
-													<button disabled type="button" class="btn btn-primary btn-block" id="tambah"><i class="fa fa-plus"></i></button>
+													<!-- <button disabled type="button" class="btn btn-primary btn-block" id="tambah"><i class="fa fa-plus"></i></button> -->
+													<button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;&nbsp;Simpan</button>
 												</div>
 												<input type="hidden" name="satuan" value="">
 											</div>
 										</div>
 									</div>
-									<div class="keranjang">
+									<!-- <div class="keranjang">
 										<h5>Detail Pengeluaran</h5>
 										<hr>
 										<table class="table table-bordered" id="keranjang">
@@ -129,7 +130,7 @@
 												</tr>
 											</tfoot>
 										</table>
-									</div>
+									</div> -->
 								</form>
 							</div>				
 						</div>
@@ -146,11 +147,11 @@
 		$(document).ready(function(){
 			$('tfoot').hide()
 
-			$(document).keypress(function(event){
-		    	if (event.which == '13') {
-		      		event.preventDefault();
-			   	}
-			})
+			// $(document).keypress(function(event){
+		 //    	if (event.which == '13') {
+		 //      		event.preventDefault();
+			//    	}
+			// })
 
 			$('#nama_customer').on('change', function(){
 				$(this).prop('disabled', true)
@@ -165,6 +166,36 @@
 				$('input[name="nama_customer"]').val('')
 			})
 
+			$('#kode_barang').on('change', function(){
+
+				if($(this).val() == '') reset()
+				else {
+					const url_get_all_barang = $('#content').data('url') + '/get_all_barang_kode'
+					$.ajax({
+						url: url_get_all_barang,
+						type: 'POST',
+						dataType: 'json',
+						data: {kode_barang: $(this).val()},
+						success: function(data){
+							// $('input[name="kode_barang"]').val(data.kode_barang)
+							$('select[name="nama_barang"]').val(data.nama_barang)
+							$('input[name="harga_barang"]').val(data.harga_jual)
+							$('input[name="jumlah"]').val(1)
+							$('input[name="satuan"]').val(data.satuan)
+							$('input[name="max_hidden"]').val(data.stok)
+							$('input[name="jumlah"]').prop('readonly', false)
+							$('button#tambah').prop('disabled', false)
+
+							$('input[name="sub_total"]').val($('input[name="jumlah"]').val() * $('input[name="harga_barang"]').val())
+							
+							$('input[name="jumlah"]').on('keydown keyup change blur', function(){
+								$('input[name="sub_total"]').val($('input[name="jumlah"]').val() * $('input[name="harga_barang"]').val())
+							})
+						}
+					})
+				}
+			})
+
 			$('#nama_barang').on('change', function(){
 
 				if($(this).val() == '') reset()
@@ -176,7 +207,8 @@
 						dataType: 'json',
 						data: {nama_barang: $(this).val()},
 						success: function(data){
-							$('input[name="kode_barang"]').val(data.kode_barang)
+							// $('input[name="kode_barang"]').val(data.kode_barang)
+							$('select[name="kode_barang"]').val(data.kode_barang)
 							$('input[name="harga_barang"]').val(data.harga_jual)
 							$('input[name="jumlah"]').val(1)
 							$('input[name="satuan"]').val(data.satuan)
@@ -225,20 +257,21 @@
 			})
 
 
-			$(document).on('click', '#tombol-hapus', function(){
-				$(this).closest('.row-keranjang').remove()
+			// $(document).on('click', '#tombol-hapus', function(){
+			// 	$(this).closest('.row-keranjang').remove()
 
-				$('option[value="' + $(this).data('nama-barang') + '"]').show()
+			// 	$('option[value="' + $(this).data('nama_barang') + '"]').show()
 
-				if($('tbody').children().length == 0) $('tfoot').hide()
-			})
+			// 	if($('tbody').children().length == 0) $('tfoot').hide()
+			// })
 
-			$('button[type="submit"]').on('click', function(){
-				$('select[name="kode_barang"]').prop('disabled', true)
-				$('select[name="nama_barang"]').prop('disabled', true)
-				$('input[name="satuan"]').prop('disabled', true)
-				$('input[name="jumlah"]').prop('disabled', true)
-			})
+			// $('button[type="submit"]').on('click', function(){
+			// 	$('select[name="kode_barang"]').prop('disabled', true)
+			// 	$('select[name="nama_barang"]').prop('disabled', true)
+			// 	$('input[name="satuan"]').prop('disabled', true)
+			// 	$('input[name="jumlah"]').prop('disabled', true)
+			// 	$('input[name="jumlah_keluar"]').prop('disabled', true)
+			// })
 
 			function hitung_total(){
 				let total = 0;
