@@ -186,7 +186,7 @@
 	<!-- Chart.js library -->
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-	<!-- Line chart b_masuk data -->
+	<!-- Data chart b_masuk -->
     <?php 
         $jml = null;
         $time = "";
@@ -198,6 +198,7 @@
         }
     ?>
 
+	<!-- Data chart b_keluar -->
     <?php 
         $jml_kl = null;
         $time_keluar = "";

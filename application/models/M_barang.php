@@ -80,7 +80,7 @@ class M_barang extends CI_Model{
 	}
 
 	public function bMasuk_tahunan(){
-		$query = $this->db->select('SUM(stok) as jumlah_masuk, year(tgl_masuk) as tgl_masuk')->from('barang')->where('year(tgl_masuk) > 2020')->group_by('year(tgl_masuk)')->get();
+		$query = $this->db->select('SUM(stok) as jumlah_masuk, year(tgl_masuk) as tgl_masuk')->from('barang')->where('year(tgl_masuk) > 2000')->group_by('year(tgl_masuk)')->get();
         return $query->result();
 	}
 
@@ -90,7 +90,7 @@ class M_barang extends CI_Model{
 	}
 
 	public function bKeluar_tahunan(){
-		$query = $this->db->select('SUM(jumlah_keluar) as jumlah_keluar, year(tgl_keluar) as tgl_keluar')->from('pengeluaran')->where('year(tgl_keluar) > 2020')->group_by('year(tgl_keluar)')->get();
+		$query = $this->db->select('SUM(jumlah_keluar) as jumlah_keluar, year(tgl_keluar) as tgl_keluar')->from('pengeluaran')->where('year(tgl_keluar) > 2000')->group_by('year(tgl_keluar)')->get();
 		return $query->result();
 	}
 }
