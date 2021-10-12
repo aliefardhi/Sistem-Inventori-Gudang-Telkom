@@ -43,10 +43,6 @@
 											<label>Tanggal Keluar</label>
 											<input type="date" name="tgl_keluar" value="<?= date('d/m/Y') ?>" class="form-control">
 										</div>
-										<div class="form-group col-2">
-											<label>Jam</label>
-											<input type="time" name="jam_keluar" value="" class="form-control">
-										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-4">
