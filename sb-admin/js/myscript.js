@@ -1,29 +1,44 @@
 const flashData = $('.flash-data').data('flashdata');
+const flashDataBarang = $('.flash-data-barang').data('flashbarang');
+const flashDataPengguna = $('.flash-data-pengguna').data('flashpengguna');
+
   if (flashData){
     Swal.fire({
         title : 'Data Barang', 
         text : 'Berhasil ' + flashData,
         icon : 'success',
     });
-  }
-
-const flashBarang = $('.flashBarang').data('flashBarang');
-  if (flashData){
+  }else if(flashDataBarang){
     Swal.fire({
-        title : 'Data Warehouse', 
-        text : 'Berhasil ' + flashData,
-        icon : 'success',
+      title : 'Data Warehouse', 
+      text : 'Berhasil ' + flashDataBarang,
+      icon : 'success',
+    });
+  }else if(flashDataPengguna){
+    Swal.fire({
+      title : 'Data Pengguna', 
+      text : 'Berhasil ' + flashDataPengguna,
+      icon : 'success',
     });
   }
 
-const flashDataPengguna = $('#flash-data-pengguna').data('flashdata');
-  if (flashData){
-    Swal.fire({
-        title : 'Data Pengguna', 
-        text : 'Berhasil ' + flashData,
-        icon : 'success',
-    });
-  }
+// const flashData = $('.flash-data').data('flashdata');
+//   if (flashData){
+//     Swal.fire({
+//         title : 'Data Warehouse', 
+//         text : 'Berhasil ' + flashData,
+//         icon : 'success',
+//     });
+//   }
+
+// const flashDataPengguna = $('#flash-data-pengguna').data('flashdata');
+//   if (flashDataPengguna){
+//     Swal.fire({
+//         title : 'Data Pengguna', 
+//         text : 'Berhasil ' + flashDataPengguna,
+//         icon : 'success',
+//     });
+//   }
 
 const flashDataDuplicate = $('.flash-data-duplicate').data('flashdata');
   if (flashDataDuplicate){
@@ -41,7 +56,7 @@ $('.tombol-delete').on('click', function (e) {
 
   Swal.fire({
     title: 'Apakah anda yakin?',
-    text: "Data barang akan dihapus",
+    text: "Data akan dihapus",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',

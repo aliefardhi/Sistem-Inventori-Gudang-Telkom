@@ -29,7 +29,7 @@
 					</div>
 				</div>
 
-				<div class="flash-data" data-flashdata="<?= $this->session->flashdata('success'); ?>"></div>
+				<div class="flash-data-barang" data-flashbarang="<?= $this->session->flashdata('success'); ?>"></div>
 				<!-- <?php if ($this->session->flashdata('success')) : ?>
 					<div class="alert alert-success alert-dismissible fade show" role="alert">
 						<?= $this->session->flashdata('success') ?>
