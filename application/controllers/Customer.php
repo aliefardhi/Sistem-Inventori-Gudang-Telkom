@@ -47,7 +47,7 @@ class Customer extends CI_Controller{
 			$this->session->set_flashdata('success', 'ditambahkan!');
 			redirect('customer');
 		} else {
-			$this->session->set_flashdata('error', 'ditambahkan!');
+			$this->session->set_flashdata('error', ' ditambahkan!');
 			redirect('customer');
 		}
 	}
@@ -58,7 +58,7 @@ class Customer extends CI_Controller{
 			redirect('dashboard');
 		}
 
-		$this->data['title'] = 'Edit Data WH';
+		$this->data['title'] = 'Ubah Data WH';
 		$this->data['customer'] = $this->m_customer->lihat_id($id);
 
 		$this->load->view('customer/ubah', $this->data);
@@ -79,10 +79,10 @@ class Customer extends CI_Controller{
 		];
 
 		if($this->m_customer->ubah($data, $kode)){
-			$this->session->set_flashdata('success', 'diubah!');
+			$this->session->set_flashdata('success', ' diubah!');
 			redirect('customer');
 		} else {
-			$this->session->set_flashdata('error', 'Data Customer <strong>Gagal</strong> Diubah!');
+			$this->session->set_flashdata('error', ' diubah!');
 			redirect('customer');
 		}
 	}
@@ -97,7 +97,7 @@ class Customer extends CI_Controller{
 			$this->session->set_flashdata('success', 'dihapus!');
 			redirect('customer');
 		} else {
-			$this->session->set_flashdata('error', 'dihapus!');
+			$this->session->set_flashdata('error', 'Data Customer <strong>Gagal</strong> Dihapus!');
 			redirect('customer');
 		}
 	}

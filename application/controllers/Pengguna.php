@@ -82,7 +82,7 @@ class Pengguna extends CI_Controller {
 		];
 
 		if($this->m_pengguna->ubah($data, $id)){
-			$this->session->set_flashdata('success', 'Data Pengguna <strong>Berhasil</strong> Diubah!');
+			$this->session->set_flashdata('success', ' diubah!');
 			redirect('pengguna');
 		} else {
 			$this->session->set_flashdata('error', 'Data Pengguna <strong>Gagal</strong> Diubah!');

@@ -27,7 +27,8 @@
 				</div>
 				<!-- <hr> -->
 
-				<?php if ($this->session->flashdata('success')) : ?>
+				<div class="flash-data" data-flashdata="<?= $this->session->flashdata('success'); ?>"></div>
+				<!-- <?php if ($this->session->flashdata('success')) : ?>
 					<div class="alert alert-success alert-dismissible fade show" role="alert">
 						<?= $this->session->flashdata('success') ?>
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -41,7 +42,7 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-				<?php endif ?>
+				<?php endif ?> -->
 
 				<div class="card shadow mt-3">
 					<div class="card-header"><strong></strong></div>

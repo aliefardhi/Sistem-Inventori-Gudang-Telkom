@@ -7,11 +7,20 @@ const flashData = $('.flash-data').data('flashdata');
     });
   }
 
+const flashBarang = $('.flashBarang').data('flashBarang');
+  if (flashData){
+    Swal.fire({
+        title : 'Data Warehouse', 
+        text : 'Berhasil ' + flashData,
+        icon : 'success',
+    });
+  }
+
 const flashDataPengguna = $('#flash-data-pengguna').data('flashdata');
-  if (flashDataPengguna){
+  if (flashData){
     Swal.fire({
         title : 'Data Pengguna', 
-        text : 'Berhasil ' + flashDataPengguna,
+        text : 'Berhasil ' + flashData,
         icon : 'success',
     });
   }
